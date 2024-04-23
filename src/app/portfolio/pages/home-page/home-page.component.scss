@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.cont {
+  position: relative;
+
+  .title {
+    font-family: "Anton", sans-serif;
+    font-size: 3em;
+    z-index: 2;
+    color: black; /* Asegúrate de que el texto sea visible */
+  }
+
+  .outlined-text {
+    font-size: 150px;
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+    position: absolute;
+    z-index: 1; /* "ABOUT ME" estará detrás de "SERGIO SANZ" */
+  }
+}
+
+.imagen {
+  background-image: url("../../../../assets/img/foto.png");
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  i {
+    font-size: 5em;
+  }
+}
