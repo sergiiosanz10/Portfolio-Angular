@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.header {
+
+  .outlined-text {
+    font-size: 110px;
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+  }
+}
+
+.imagen {
+  background-image: url("../../../../assets/img/foto.png");
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  i {
+    font-size: 5em;
+  }
+}
+
+img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+.aboutBtn{
+  border: 2px solid grey;
+  padding: 10px;
+  background-color: inherit;
+}
+.aboutBtn:hover{
+  background-color: #212529;
+  color: white;
+}
+
+.text{
+  font-family: "Montserrat", sans-serif;
+}

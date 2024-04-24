@@ -6,7 +6,7 @@
     font-family: "Anton", sans-serif;
     font-size: 3em;
     z-index: 2;
-    color: black; /* Asegúrate de que el texto sea visible */
+    color: black;
   }
 
   .outlined-text {
@@ -14,7 +14,7 @@
     -webkit-text-stroke: 1px black;
     color: transparent;
     position: absolute;
-    z-index: 1; /* "ABOUT ME" estará detrás de "SERGIO SANZ" */
+    z-index: 1;
   }
 }
 

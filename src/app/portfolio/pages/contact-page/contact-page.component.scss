@@ -2,15 +2,15 @@ input,
 button,
 textarea {
   border: 2px solid rgba(0, 0, 0, 0.6);
-  background-image: none;
-  background-color: #dadad3;
-  box-shadow: none;
   padding: 5px;
 }
+
+
 input:focus,
 button:focus,
 textarea:focus {
   outline: none;
+  background-color: whitesmoke;
 }
 
 textarea {
@@ -39,7 +39,6 @@ button {
     font-size: x-large;
   }
   .form {
-    position: relative;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -51,4 +50,14 @@ button {
     margin-top: 5%;
     max-height: 200px;
   }
+
+.send{
+  border: 2px solid grey;
+  padding: 10px;
+  background-color: inherit;
+}
+.send:hover{
+  background-color: #212529;
+  color: white;
+}
 
