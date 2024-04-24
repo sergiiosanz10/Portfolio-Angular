@@ -1,45 +1,38 @@
 <div class="container-fluid">
 
-  <div class="row">
-    <div class="col-8">
-
-      <div class="row">
-        <div class="col-12 header">
-          <div class="outlined-text mx-2">ABOUT ME</div>
-        </div><hr>
+  <div class="row flex-container">
+    <div class="col-6">
+      <div class="p-2 mx-4 header">
+        <div class="outlined-text">ABOUT</div>
+        <div class="title m-5">SERGIO SANZ</div>
       </div>
+      <hr class="mt-3">
 
-      <div class="row">
-        <div class="col-11 d-flex justify-content-start m-4 mb-0">
-          <div class="d-flex" style="height: 400px;">
-            <div class="vr border border-dark"></div>
-            <div class="text mx-2">
-              {{text}}
-              <br><button type="button" class="aboutBtn mt-3" [routerLink]="['..', 'contact']">Contact</button>
-            </div>
-
-          </div>
+      <div class="d-flex mt-5 mx-2 text-container" style="height: 190px;">
+        <div class="vr border border-dark"></div>
+        <div class="text mx-2">
+          {{text}}
+          <br><button type="button" class="aboutBtn mt-3" [routerLink]="['..', 'contact']">Contact</button>
         </div>
-
       </div>
 
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center mt-5">
         <div class="skills">
-          <img src="../../../../assets/img/html.png" alt="html">
-          <img src="../../../../assets/img/css.png" alt="css">
-          <img src="../../../../assets/img/js.png" alt="js">
-          <img src="../../../../assets/img/ts.png" alt="ts">
-          <img src="../../../../assets/img/boots.png" alt="boots">
-          <img src="../../../../assets/img/angular.png" alt="angular">
-          <img src="../../../../assets/img/scss.png" alt="scss">
-          <img src="../../../../assets/img/php.png" alt="php">
-          <img src="../../../../assets/img/jquery.png" alt="jquery">
-          <img src="../../../../assets/img/node.png" alt="node">
-          <img src="../../../../assets/img/npm.png" alt="npm">
-          <img src="../../../../assets/img/react.png" alt="react">
+          <img class="icons" src="../../../../assets/img/html.png" alt="html">
+          <img class="icons" src="../../../../assets/img/css.png" alt="css">
+          <img class="icons" src="../../../../assets/img/js.png" alt="js">
+          <img class="icons" src="../../../../assets/img/ts.png" alt="ts">
+          <img class="icons" src="../../../../assets/img/boots.png" alt="boots">
+          <img class="icons" src="../../../../assets/img/angular.png" alt="angular">
+          <img class="icons" src="../../../../assets/img/scss.png" alt="scss">
+          <img class="icons" src="../../../../assets/img/php.png" alt="php">
+          <img class="icons" src="../../../../assets/img/jquery.png" alt="jquery">
+          <img class="icons" src="../../../../assets/img/node.png" alt="node">
+          <img class="icons" src="../../../../assets/img/npm.png" alt="npm">
+          <img class="icons" src="../../../../assets/img/react.png" alt="react">
         </div>
       </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 imagen"></div>
+    <div class="col-6 d-flex justify-content-end"><img class="imagen" src="../../../../assets/img/foto.png" alt=""></div>
   </div>
 </div>

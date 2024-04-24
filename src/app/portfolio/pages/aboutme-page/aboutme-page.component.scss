@@ -1,22 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 .header {
+  .title {
+    font-family: "Anton", sans-serif;
+    font-size: 3em;
+    z-index: 2;
+    color: black;
+  }
 
   .outlined-text {
-    font-size: 110px;
+    font-size: 150px;
+    width: auto;
     -webkit-text-stroke: 1px black;
     color: transparent;
+    position: absolute;
+    z-index: 1;
   }
 }
 
-.imagen {
-  background-image: url("../../../../assets/img/foto.png");
-  height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
+.text-container {
+  height: auto !important;
 }
+
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -28,7 +36,7 @@
   }
 }
 
-img{
+.icons{
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
@@ -52,4 +60,67 @@ img{
 
 .text{
   font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 1375px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .col-6 {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .imagen {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover; /* Añade esta línea */
+    object-position: top; /* Añade esta línea */
+    height: 120vh;
+  }
+}
+
+@media (max-width: 633px) {
+  .header {
+    .title {
+      font-size: 2em;
+    }
+
+    .outlined-text {
+      font-size: 100px;
+    }
+  }
+  .text-container {
+    height: auto !important;
+  }
+
+  .imagen {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover; /* Añade esta línea */
+    object-position: top; /* Añade esta línea */
+    height: 80vh;
+  }
+}
+@media (max-width: 495px) {
+
+  .imagen {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover; /* Añade esta línea */
+    object-position: top; /* Añade esta línea */
+    height: 60vh;
+  }
 }
