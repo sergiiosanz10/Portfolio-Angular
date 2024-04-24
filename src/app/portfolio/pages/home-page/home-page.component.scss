@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.cont {
-  position: relative;
-
+.header {
   .title {
     font-family: "Anton", sans-serif;
     font-size: 3em;
@@ -35,4 +34,30 @@
   i {
     font-size: 5em;
   }
+}
+
+img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+.aboutBtn{
+  border: 2px solid grey;
+  padding: 10px;
+  background-color: inherit;
+}
+.aboutBtn:hover{
+  background-color: #212529;
+  color: white;
+}
+
+.text{
+  font-family: "Montserrat", sans-serif;
 }

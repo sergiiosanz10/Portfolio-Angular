@@ -1,0 +1,54 @@
+input,
+button,
+textarea {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #dadad3;
+  box-shadow: none;
+  padding: 5px;
+}
+input:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  min-height: 200px;
+  resize: none;
+}
+
+button {
+  font-weight: 500;
+}
+
+.contact-box {
+  border: 1px solid black;
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+}
+
+.header {
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+    font-size: x-large;
+  }
+  .form {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .email{
+    margin-top: 2%;
+  }
+  .message {
+    margin-top: 5%;
+    max-height: 200px;
+  }
+

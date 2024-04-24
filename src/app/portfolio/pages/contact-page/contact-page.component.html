@@ -1,1 +1,21 @@
-<p>contact-page works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 d-flex align-items-center m-5">
+
+      <div class="contact-box p-5 ">
+        <div class="header">
+          Contact
+        </div>
+        <form class="form" (submit)="sendEmail($event)">
+          <input type="text" name="user_name" placeholder='Name' required />
+          <input type="email" class="email" placeholder="Email" name="user_email" required />
+          <textarea type="text" class="message" placeholder="Message" name="message" required></textarea>
+          <button class="feedback-body__submit mt-2">SEND</button>
+        </form>
+      </div>
+      <div class="col-3"></div>
+
+    </div>
+  </div>
+</div>
