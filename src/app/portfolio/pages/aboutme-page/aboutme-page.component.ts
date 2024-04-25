@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomCursorComponent } from '../../../shared/components/custom-cursor/cursor-component';
 
 @Component({
   selector: 'app-aboutme-page',
@@ -18,4 +19,13 @@ export class AboutmePageComponent {
 
   I'm always looking for new opportunities to apply my skills and contribute to exciting projects. If you're interested in working with me, please don't hesitate to get in touch!`;
 
+  constructor(private customCursor: CustomCursorComponent) { }
+
+  onMouseEnter() {
+    this.customCursor.setIsHovered(true);
+  }
+
+  onMouseLeave() {
+    this.customCursor.setIsHovered(false);
+  }
 }

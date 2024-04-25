@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { CustomCursorComponent } from '../../../shared/components/custom-cursor/cursor-component';
 
 @Component({
   selector: 'app-contact-page',
@@ -7,6 +8,8 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
   styleUrl: './contact-page.component.scss'
 })
 export class ContactPageComponent {
+
+  constructor(private customCursor: CustomCursorComponent) { }
 
   public sendEmail(e: Event) {
     e.preventDefault();
@@ -23,6 +26,15 @@ export class ContactPageComponent {
           console.log('FAILED...', (error as EmailJSResponseStatus).text);
         },
       );
+  }
+
+
+  onMouseEnter() {
+    this.customCursor.setIsHovered(true);
+  }
+
+  onMouseLeave() {
+    this.customCursor.setIsHovered(false);
   }
 
 }

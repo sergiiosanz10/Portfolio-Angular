@@ -8,10 +8,10 @@
           Contact Me
         </div>
         <form class="form" (submit)="sendEmail($event)">
-          <input type="text" name="user_name" placeholder='Name' required />
-          <input type="email" class="email" placeholder="Email" name="user_email" required />
-          <textarea type="text" class="message" placeholder="Message" name="message" required></textarea>
-          <button class="feedback-body__submit mt-2 send d-flex  justify-content-center">SEND</button>
+          <input type="text" name="user_name" placeholder='Name' required (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" />
+          <input type="email" class="email" placeholder="Email" name="user_email" required (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" />
+          <textarea type="text" class="message" placeholder="Message" name="message" required (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"></textarea>
+          <button class="feedback-body__submit mt-2 send d-flex  justify-content-center" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">SEND</button>
         </form>
       </div>
     </div>

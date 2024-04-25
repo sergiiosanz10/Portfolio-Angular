@@ -24,7 +24,7 @@ export class CustomCursorComponent implements OnDestroy {
     const x = event.clientX;
     const y = event.clientY;
     if (this.cursor && this.stalker) {
-      this.renderer.setStyle(this.cursor.nativeElement, 'transform', `translate(${x}px, ${y}px) ${this.isHovered ? 'scale(2)' : ''}`);
+      this.renderer.setStyle(this.cursor.nativeElement, 'transform', `translate(${x}px, ${y}px) ${this.isHovered ? 'scale(1.5)' : ''}`);
       this.renderer.setStyle(this.stalker.nativeElement, 'transform', `translate(${x}px, ${y}px)`);
     }
   }

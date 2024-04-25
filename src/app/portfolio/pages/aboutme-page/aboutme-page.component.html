@@ -13,8 +13,8 @@
         <div class="text mx-2">
           {{text}}
           <br>
-          <button type="button" class="aboutBtn mt-3" [routerLink]="['..', 'projects']">Projects</button>
-          <button type="button" class="aboutBtn mt-3 mx-5" [routerLink]="['..', 'contact']">Contact</button>
+          <button type="button" class="aboutBtn mt-3" [routerLink]="['..', 'projects']" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Projects</button>
+          <button type="button" class="aboutBtn mt-3 mx-5" [routerLink]="['..', 'contact']" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Contact</button>
         </div>
       </div>
 
