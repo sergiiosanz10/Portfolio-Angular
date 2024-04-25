@@ -30,3 +30,8 @@
 #cursor {
   mix-blend-mode: difference;
 }
+@media (max-width: 900px) {
+  #cursor {
+    display: none;
+  }
+}
