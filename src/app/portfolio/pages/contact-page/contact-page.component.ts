@@ -21,6 +21,7 @@ export class ContactPageComponent {
       .then(
         () => {
           console.log('SUCCESS!');
+          location.reload();
         },
         (error) => {
           console.log('FAILED...', (error as EmailJSResponseStatus).text);
