@@ -9,17 +9,20 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
 
 
 
+
 @NgModule({
   declarations: [
     AboutmePageComponent,
     ContactPageComponent,
     ProjectsPageComponent,
-    HomePageComponent
+    HomePageComponent,
+
   ],
   imports: [
     CommonModule,
     SharedModule,
-    PortfolioRoutingModule
+    PortfolioRoutingModule,
+
   ]
 })
 export class PortfolioModule { }

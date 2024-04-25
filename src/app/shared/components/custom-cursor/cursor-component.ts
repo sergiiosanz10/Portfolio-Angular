@@ -17,16 +17,20 @@ export class CustomCursorComponent implements OnDestroy {
   isHovered = false;
   listenerFn?: () => void;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) { }
+
+
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    const x = event.clientX;
-    const y = event.clientY;
-    if (this.cursor && this.stalker) {
-      this.renderer.setStyle(this.cursor.nativeElement, 'transform', `translate(${x}px, ${y}px) ${this.isHovered ? 'scale(1.5)' : ''}`);
-      this.renderer.setStyle(this.stalker.nativeElement, 'transform', `translate(${x}px, ${y}px)`);
-    }
+    requestAnimationFrame(() => {
+      const x = event.clientX;
+      const y = event.clientY;
+      if (this.cursor && this.stalker) {
+        this.renderer.setStyle(this.cursor.nativeElement, 'transform', `translate(${x}px, ${y}px) ${this.isHovered ? 'scale(1.5)' : ''}`);
+        this.renderer.setStyle(this.stalker.nativeElement, 'transform', `translate(${x}px, ${y}px)`);
+      }
+    });
   }
 
   setIsHovered(value: boolean) {
