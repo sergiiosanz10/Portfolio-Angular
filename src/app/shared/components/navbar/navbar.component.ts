@@ -7,6 +7,8 @@ import { CustomCursorComponent } from '../custom-cursor/cursor-component';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+
+
   constructor(private customCursor: CustomCursorComponent) {}
 
   onMouseEnter() {
