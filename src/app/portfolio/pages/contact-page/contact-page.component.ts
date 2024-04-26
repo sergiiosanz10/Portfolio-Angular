@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { CustomCursorComponent } from '../../../shared/components/custom-cursor/cursor-component';
+import { environment } from './../../../../environments/environment';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -52,7 +53,7 @@ export class ContactPageComponent {
 
     emailjs
       .sendForm('service_bbu0o6g', 'template_bf3ksfr', e.target as HTMLFormElement, {
-        publicKey: 'rsQJ4VOdU8W3p53zn',
+        publicKey: environment.apiKey,
       })
       .then(
         () => {
