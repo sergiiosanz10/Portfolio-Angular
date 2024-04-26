@@ -44,7 +44,7 @@ export class ContactPageComponent {
     // Limita los correos electrónicos a uno cada 30 segundos
     if (timeSinceLastEmail < 30000) {
       console.log('Por favor, espera antes de enviar otro correo electrónico.');
-      this.openSnackBar('ERROR al enviar el correo!!', 'Cerrar');
+      this.openSnackBar('ERROR al enviar el correo, intentelo mas tarde!!', 'Cerrar');
       return;
     }
 
