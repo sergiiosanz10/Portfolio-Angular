@@ -12,7 +12,7 @@ export class HomePageComponent {
 
   text: string = `Hello! My name is Sergio Sanz, and I am a passionate Front-end developer. I specialize in creating interactive, efficient, and sophisticated
                   web applications using the latest technologies and frameworks.
-                  Over the years, I have honed my skills in HTML, CSS, JavaScript, and TypeScript. I have a solid experience with frameworks such as Angular...`
+                  Over the years, I have honed my skills in HTML, CSS, JavaScript, and TypeScript. I have a solid experience with frameworks such as Angular`
 
 
   constructor(private customCursor: CustomCursorComponent) { }
