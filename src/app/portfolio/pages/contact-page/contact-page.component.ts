@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { CustomCursorComponent } from '../../../shared/components/custom-cursor/cursor-component';
+import { environment } from './../../../../environments/environment';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -43,7 +44,7 @@ export class ContactPageComponent {
     // Limita los correos electrónicos a uno cada 30 segundos
     if (timeSinceLastEmail < 30000) {
       console.log('Por favor, espera antes de enviar otro correo electrónico.');
-      this.openSnackBar('ERROR al enviar el correo!!', 'Cerrar');
+      this.openSnackBar('ERROR al enviar el correo, intentelo mas tarde!!', 'Cerrar');
       return;
     }
 
@@ -52,7 +53,7 @@ export class ContactPageComponent {
 
     emailjs
       .sendForm('service_bbu0o6g', 'template_bf3ksfr', e.target as HTMLFormElement, {
-        publicKey: 'rsQJ4VOdU8W3p53zn',
+        publicKey: environment.apiKey,
       })
       .then(
         () => {

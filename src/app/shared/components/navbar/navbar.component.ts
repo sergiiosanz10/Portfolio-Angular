@@ -6,10 +6,11 @@ import { CustomCursorComponent } from '../custom-cursor/cursor-component';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
+
 export class NavbarComponent {
 
-
   constructor(private customCursor: CustomCursorComponent) {}
+
 
   onMouseEnter() {
     this.customCursor.setIsHovered(true);
@@ -18,4 +19,6 @@ export class NavbarComponent {
   onMouseLeave() {
     this.customCursor.setIsHovered(false);
   }
+
+  
 }
