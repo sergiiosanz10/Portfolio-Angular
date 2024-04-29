@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { CustomCursorComponent } from '../../../../shared/components/custom-cursor/cursor-component';
 
-
+import { CustomCursorComponent } from '../../../shared/components/custom-cursor/cursor-component';
 
 
 @Component({
