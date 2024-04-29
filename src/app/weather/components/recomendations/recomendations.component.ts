@@ -13,7 +13,6 @@ export class RecomendationsComponent {
     'Jugar a fútbol',
     'Hacer una barbacoa',
     'Hacer una excursión',
-    'Ir a la montaña',
     'Hacer una ruta en bicicleta'
   ];
 
@@ -22,7 +21,6 @@ export class RecomendationsComponent {
     'Ver una película',
     'Hacer una maratón de series',
     'Leer un libro',
-    'Hacer una receta de cocina',
   ];
 
   constructor(private weatherService: WeatherService) { }
