@@ -3,10 +3,11 @@
 
 ## Development
 
-1. ``npm install``
-2. ```` npm install --save @emailjs/browser ````
-3. ``` npm install @fortawesome/angular-fontawesome```
-4. ````npm install @fortawesome/free-solid-svg-icons````
-5. ```npm i --save-dev @types/uuid ```
-6. ```npm i @swimlane/ngx-charts```
+1. ``` npm install                                  ```
+2. ``` ng add @angular/material                     ```
+3. ``` npm i @swimlane/ngx-charts                   ```
+4. ``` npm install --save-dev @types/uuid           ```
+5. ``` npm install --save @emailjs/browser          ```
+6. ``` npm install @fortawesome/angular-fontawesome ```
+7. ``` npm install @fortawesome/free-solid-svg-icons```
 
