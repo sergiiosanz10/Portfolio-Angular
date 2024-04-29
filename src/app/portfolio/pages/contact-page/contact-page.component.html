@@ -1,4 +1,8 @@
-<div class="container-fluid">
+<div *ngIf="isLoading" class="container loading">
+  <shared-loadging-spiner></shared-loadging-spiner>
+</div>
+
+<div class="container-fluid" *ngIf="!isLoading">
   <div class="row">
     <div class="col"></div>
     <div class="col-10 col-sm-10 col-md-10 col-lg-6 col-xl-6 col-xxl-6 m-5">

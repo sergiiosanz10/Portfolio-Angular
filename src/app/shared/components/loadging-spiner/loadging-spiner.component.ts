@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-loadging-spiner',
+  selector: 'shared-loadging-spiner',
   templateUrl: './loadging-spiner.component.html',
   styleUrl: './loadging-spiner.component.scss'
 })
