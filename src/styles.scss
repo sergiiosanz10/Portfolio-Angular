@@ -60,7 +60,7 @@ $Portfolio-theme: mat.define-light-theme((
   cursor: none !important;
 }
 
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 a{
@@ -70,3 +70,15 @@ a{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-card{
+  background: rgba( 255, 255, 255, 0.25 ) !important;
+  backdrop-filter: blur( 4px ) !important;
+  -webkit-backdrop-filter: blur( 4px ) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}

@@ -1,0 +1,37 @@
+img{
+  height: 50px;
+}
+
+.radius{
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.clear {
+  background-image: url('../../../../assets/img/despejado-min.jpeg');
+  background-size: cover;
+}
+
+.clouds {
+  background-image: url('../../../../assets/img/nublado-min.jpg');
+  background-size: cover;
+}
+
+.rain{
+  background-image: url('../../../../assets/img/lluvia-min.jpg');
+  background-size: cover;
+}
+
+.snow{
+  background-image: url('../../../../assets/img/nieve-min.jpg');
+  background-size: cover;
+}
+
+.night{
+  background-image: url('../../../../assets/img/noche-min.jpg');
+  background-size: cover;
+}
+

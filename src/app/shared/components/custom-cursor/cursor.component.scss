@@ -5,7 +5,7 @@
   background-color: #ffffff;
   border-radius: 100%;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 10000;
   transition: transform ease-out 10ms;
 }
 #stalker {
@@ -19,7 +19,7 @@
   border-radius: 100%;
   pointer-events: none;
   transition: transform ease-out 100ms;
-  z-index: 999;
+  z-index: 9999;
 }
 #cursor, #stalker {
   position: fixed;

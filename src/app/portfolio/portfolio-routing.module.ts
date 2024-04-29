@@ -21,7 +21,16 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    component: ProjectsPageComponent
+    children: [
+      {
+        path: '',
+        component: ProjectsPageComponent
+      },
+      {
+        path: 'weather',
+        loadChildren: () => import('../weather/weather.module').then(m => m.WeatherModule)
+      }
+    ]
   },
   {
     path: '**',
