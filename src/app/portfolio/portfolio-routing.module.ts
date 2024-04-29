@@ -34,6 +34,10 @@ const routes: Routes = [
         path: 'tasks',
         loadChildren: () => import('../tasks/task.module').then(m => m.TaskModule)
       },
+      {
+        path: 'countries',
+        loadChildren: () => import('../countries/countries/countries.module').then(m => m.CountriesModule)
+      },
     ]
   },
   {
