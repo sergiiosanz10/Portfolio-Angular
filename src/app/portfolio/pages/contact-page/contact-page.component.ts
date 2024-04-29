@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ContactPageComponent {
 
+  public isLoading: boolean = false;
 
   constructor(
     private customCursor: CustomCursorComponent,
@@ -19,12 +20,6 @@ export class ContactPageComponent {
   ) { }
 
 
-  public ngOnInit() {
-    // Solo establece la cookie si no existe
-    if (!this.getCookie('lastEmailSentAt')) {
-      document.cookie = `lastEmailSentAt=${Date.now()}; path=/`;
-    }
-  }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
@@ -50,21 +45,29 @@ export class ContactPageComponent {
 
     // Actualiza la cookie con la fecha y hora actuales
     document.cookie = `lastEmailSentAt=${now}; path=/`;
+this.isLoading = true;
 
-    emailjs
-      .sendForm('service_bbu0o6g', 'template_bf3ksfr', e.target as HTMLFormElement, {
-        publicKey: environment.apiKey,
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          this.openSnackBar('Correo enviado con exito!!', 'Cerrar');
-          form.reset();
-        },
-        (error) => {
-          console.log('FAILED...', (error as EmailJSResponseStatus).text);
-        },
-      );
+    setTimeout(() => {
+
+      emailjs
+        .sendForm('service_bbu0o6g', 'template_bf3ksfr', e.target as HTMLFormElement, {
+          publicKey: environment.apiKey,
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            document.cookie = `lastEmailSentAt=${Date.now()}; path=/`;
+            this.openSnackBar('Correo enviado con exito!!', 'Cerrar');
+            this.isLoading = false;
+            form.reset();
+          },
+          (error) => {
+            console.log('FAILED...', (error as EmailJSResponseStatus).text);
+            this.isLoading = false;
+
+          },
+        );
+    }, 1000);
   }
 
   private getCookie(name: string) {
