@@ -48,6 +48,7 @@ export class ContactPageComponent {
 this.isLoading = true;
 
     setTimeout(() => {
+      
       emailjs
         .sendForm('service_bbu0o6g', 'template_bf3ksfr', e.target as HTMLFormElement, {
           publicKey: environment.apiKey,
