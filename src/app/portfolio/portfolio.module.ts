@@ -6,6 +6,7 @@ import { ProjectsPageComponent } from './pages/projects-page/projects-page.compo
 import { SharedModule } from '../shared/shared.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -22,6 +23,7 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
     CommonModule,
     SharedModule,
     PortfolioRoutingModule,
+    MatCardModule
 
   ]
 })

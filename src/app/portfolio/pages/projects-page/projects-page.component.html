@@ -2,34 +2,41 @@
   <!-- TODO: Carousel -->
   <div class="row row-cols-1 row-cols-md-2 g-4 mt-2 mb-5">
     <div class="col">
-      <div class="card">
-        <img src="../../../../assets/img/weather.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Weather App</h5>
-          <p class="card-text">This is an app to check the weather of cities.</p>
-          <a href="https://weatherprime.netlify.app/" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go web</a>
-        </div>
-      </div>
+      <mat-card class="border border-black rounded-0 p-2">
+        <mat-card-title class="card-title">Weather App</mat-card-title>
+        <mat-card-subtitle class="mb-2">This is an app to check the weather of cities.</mat-card-subtitle>
+        <mat-card-content>
+          <img mat-card-image src="../../../../assets/img/weather.png" class="card-img-top" alt="Project image">
+        </mat-card-content>
+        <mat-card-actions>
+            <a href="https://weatherprime.netlify.app/" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go web</a>
+        </mat-card-actions>
+      </mat-card>
     </div>
+
     <div class="col">
-      <div class="card">
-        <img src="../../../../assets/img/country.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Country App</h5>
-          <p class="card-text">This is an app to search for capitals</p>
-          <a href="https://geoguideapp.netlify.app/" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go web</a>
-        </div>
-      </div>
+      <mat-card class="border border-black rounded-0 p-2">
+        <mat-card-title class="card-title">Country App</mat-card-title>
+        <mat-card-subtitle class="mb-2">This is an app to search for capitals.</mat-card-subtitle>
+        <mat-card-content>
+          <img mat-card-image src="../../../../assets/img/country.png" class="card-img-top" alt="Project image">
+        </mat-card-content>
+        <mat-card-actions>
+            <a href="https://geoguideapp.netlify.app/" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go web</a>
+        </mat-card-actions>
+      </mat-card>
     </div>
+
     <div class="col">
-      <div class="card">
-        <img src="../../../../assets/img/task.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">TaskList</h5>
-          <p class="card-text">This is an application to organize tasks.</p>
-          <a href="https://taskeaseapp.netlify.app/" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go web</a>
-        </div>
-      </div>
+      <mat-card class="border border-black rounded-0 p-2">
+        <mat-card-title class="card-title">TaskList</mat-card-title>
+        <mat-card-subtitle class="mb-2">This is an application to organize tasks.</mat-card-subtitle>
+        <mat-card-content>
+          <img mat-card-image src="../../../../assets/img/task.png" class="card-img-top" alt="Project image">
+        </mat-card-content>
+        <mat-card-actions>
+            <a href="https://taskeaseapp.netlify.app/" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go web</a>
+        </mat-card-actions>
+      </mat-card>
     </div>
-  </div>
 </div>
