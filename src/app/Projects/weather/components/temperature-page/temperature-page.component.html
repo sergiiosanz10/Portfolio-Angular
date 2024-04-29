@@ -1,0 +1,30 @@
+<div class="text-start p-3 border-round-sm bg-primary font-bold">
+  <mat-card class="shadow-8 radius">
+    <mat-card-header>
+      <mat-card-title>Temperatura Actual</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="mt-3 h-16rem">
+
+      <div class="flex flex-column text-xl">
+        <div class="flex align-items-center justify-content-start h-4rem bg-primary font-bold border-round m-2">
+          <img matCardImage src="../../../../assets/img/thermometer-min.png">
+          <p class="ml-3">{{weather?.main?.temp | number: '1.0-0'}} °C</p>
+        </div>
+      </div>
+      <div class="flex flex-column text-xl">
+        <div class="flex align-items-center justify-content-start h-4rem bg-primary font-bold border-round m-2">
+          <img matCardImage src="../../../../assets/img/hot-min.png">
+          <p class="ml-3">{{weather?.main?.temp_max  | number: '1.0-0'}} °C Max</p>
+        </div>
+        <div class="flex align-items-center justify-content-start h-4rem bg-primary font-bold border-round m-2">
+          <img matCardImage src="../../../../assets/img/cold-min.png">
+          <p class="ml-3">{{weather?.main?.temp_min  | number: '1.0-0'}} °C Min</p>
+        </div>
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

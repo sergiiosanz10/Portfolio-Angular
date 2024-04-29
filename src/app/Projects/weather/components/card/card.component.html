@@ -1,0 +1,30 @@
+<div class="text-center p-3 border-round-sm bg-primary font-bold">
+  <mat-card class="shadow-8 radius">
+    <mat-card-header>
+      <mat-card-title>Pronostico semanal</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <div class="grid m-3 dates mb-2" *ngIf="datelist">
+
+        <mat-card class="mr-4 col-12 md:col-3 lg:3 mb-3 radius card" *ngFor="let date of datelist" >
+          <div class="col">
+              <div class="text-center p-3 border-round-sm bg-primary font-bold">
+                <mat-card-title>{{ getDate(date.dt) === 'Hoy' ? 'Hoy' : (getDate(date.dt) | date: 'EEEE' | titlecase) }}</mat-card-title>
+              </div>
+              <div class="text-center p-3 border-round-sm bg-primary font-bold">
+                <img class="icon" src="https://openweathermap.org/img/wn/{{date.weather[0].icon}}@2x.png" alt="">
+              </div>
+              <div class="text-center p-3 border-round-sm bg-primary font-bold">
+                <p>{{date.temp.max | number: '1.0-0'}} °C Max</p>
+                <p>{{date.temp.min | number: '1.0-0'}} °C Min</p>
+              </div>
+          </div>
+        </mat-card>
+
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

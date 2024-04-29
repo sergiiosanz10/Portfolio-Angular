@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-import { CustomCursorComponent } from '../../../shared/components/custom-cursor/cursor-component';
-import { environment } from './../../../../environments/environment';
+
 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomCursorComponent } from '../../../../shared/components/custom-cursor/cursor-component';
+import { environment } from '../../../../../environments/environment.development';
 
 @Component({
   selector: 'app-contact-page',
