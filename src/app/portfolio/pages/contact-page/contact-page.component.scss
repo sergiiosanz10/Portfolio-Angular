@@ -55,6 +55,7 @@ button {
   border: 2px solid grey;
   padding: 10px;
   background-color: inherit;
+  transition: all 300ms;
 }
 .send:hover{
   background-color: #212529;
