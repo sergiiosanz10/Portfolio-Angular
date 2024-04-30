@@ -20,8 +20,6 @@ export class FlagsComponent {
   flags(): void {
     this.flagsService.getFlags()
       .subscribe(flags => {
-        console.log(flags);
-
         this.flagsList = flags;
       });
   }
