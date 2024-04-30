@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FlagsService } from '../../services/flags.service';
-import { Flags } from '../../interfaces/flags.interfaces';
+import { Flags, Name } from '../../interfaces/flags.interfaces';
 
 @Component({
   selector: 'app-flags',
@@ -10,7 +10,6 @@ import { Flags } from '../../interfaces/flags.interfaces';
 export class FlagsComponent {
 
   public flagsList: Flags[] = [];
-
 
   constructor(private flagsService: FlagsService) { }
 

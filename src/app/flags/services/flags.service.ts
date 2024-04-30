@@ -8,7 +8,7 @@ export class FlagsService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl: string = 'https://restcountries.com/v3.1/all?fields=flags';
+  private apiUrl: string = 'https://restcountries.com/v3.1/all?fields=flags,name';
 
 
   getFlags():Observable<Flags[]>{

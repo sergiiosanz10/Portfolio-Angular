@@ -3,7 +3,8 @@
     <mat-card class="m-5 card" *ngFor="let flag of flagsList">
             <!-- @defer para cargar las banderas que se ven en la pantalla  -->
             @defer (on viewport; ) {
-              <img mat-card-image [src]="flag.flags.png" [alt]="flag.flags.alt" [title]="flag.flags.alt">
+              <img mat-card-image [src]="flag.flags.png" [alt]="flag.flags.alt">
+              <h1 class="name box" id="">{{flag.name.common}}</h1>
             }@placeholder {
               <div class="">
                 <shared-loadging-spiner></shared-loadging-spiner>
