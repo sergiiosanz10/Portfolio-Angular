@@ -38,6 +38,10 @@ const routes: Routes = [
         path: 'countries',
         loadChildren: () => import('../countries/countries/countries.module').then(m => m.CountriesModule)
       },
+      {
+        path: 'flags',
+        loadChildren: () => import('../flags/flags.module').then(m => m.FlagsModule)
+      },
     ]
   },
   {

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-12 mt-3 d-flex flex-wrap justify-content-center">
+    <mat-card class="m-5 card" *ngFor="let flag of flagsList">
+            <!-- @defer para cargar las banderas que se ven en la pantalla  -->
+            @defer (on viewport; ) {
+              <img mat-card-image [src]="flag.flags.png" [alt]="flag.flags.alt" [title]="flag.flags.alt">
+            }@placeholder {
+              <div class="">
+                <shared-loadging-spiner></shared-loadging-spiner>
+              </div>
+            }
+    </mat-card>
+  </div>
+</div>
