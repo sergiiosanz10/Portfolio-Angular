@@ -10,7 +10,7 @@
 
     <ng-container *ngIf="tasks.length > 0; else noTasksMessage">
 
-      <div class="col-5 mx-5 " *ngFor="let type of taskTypes">
+      <div class="col-11 col-md-5 col-lg-5 mx-5 " *ngFor="let type of taskTypes">
         <app-list [taskList]="tasks" [taskType]="type" (onCheck)="check($event)" (onModify)="modify($event, $event )"
           (onDelete)="onDeleteTask($event)"></app-list>
       </div>
