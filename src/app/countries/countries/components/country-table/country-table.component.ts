@@ -4,7 +4,7 @@ import { Country } from '../../interfaces/country.interfaces';
 @Component({
   selector: 'countries-table',
   templateUrl: './country-table.component.html',
-  styleUrl: './country-table.component.css'
+  styleUrl: './country-table.component.scss'
 })
 export class CountryTableComponent {
 
