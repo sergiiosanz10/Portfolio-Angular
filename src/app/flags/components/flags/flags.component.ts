@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FlagsService } from '../../services/flags.service';
-import { Flags, Name } from '../../interfaces/flags.interfaces';
+import { Flags  } from '../../interfaces/flags.interfaces';
 
 @Component({
   selector: 'app-flags',
@@ -10,6 +10,13 @@ import { Flags, Name } from '../../interfaces/flags.interfaces';
 export class FlagsComponent {
 
   public flagsList: Flags[] = [];
+
+  @Input()
+  public currency?: string [];
+
+  @Input()
+  public flagSelected?: Flags
+
 
   constructor(private flagsService: FlagsService) { }
 
@@ -21,6 +28,14 @@ export class FlagsComponent {
     this.flagsService.getFlags()
       .subscribe(flags => {
         this.flagsList = flags;
+        console.log(flags);
       });
+
   }
+
+
+  setflagSelected(i: number): void {
+    this.flagSelected = this.flagsList[i];
+  }
+
 }
