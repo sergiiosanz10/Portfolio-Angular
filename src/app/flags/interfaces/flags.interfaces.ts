@@ -9,9 +9,7 @@ export interface Flags {
   currencies?: Currencies;
 
   capital: string;
-  languages: {
-    language: string
-  }
+  languages?: Languages;
   population:   number;
 }
 export interface Name {
