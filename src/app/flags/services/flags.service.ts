@@ -8,11 +8,12 @@ export class FlagsService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl: string = 'https://restcountries.com/v3.1/all?fields=flags,name';
+  private apiUrl: string = 'https://restcountries.com/v3.1/all?fields=flags,name,capital,currencies,languages,population';
 
 
   getFlags():Observable<Flags[]>{
     const url = `${this.apiUrl}`
     return this.http.get<Flags[]>(url)
   }
+
 }

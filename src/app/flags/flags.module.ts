@@ -7,13 +7,15 @@ import { MaterialModule } from '../material/material.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FlagsComponent } from './components/flags/flags.component';
 import { SharedModule } from '../shared/shared.module';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
   declarations: [
     FlagPageComponent,
     NavBarComponent,
-    FlagsComponent
+    FlagsComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
