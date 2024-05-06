@@ -5,7 +5,7 @@ import { Country } from '../../interfaces/country.interfaces';
 @Component({
   selector: 'app-by-capital-page',
   templateUrl: './by-capital-page.component.html',
-  styleUrl: './by-capital-page.component.css'
+  styleUrl: './by-capital-page.component.scss'
 })
 export class ByCapitalPageComponent implements OnInit{
 

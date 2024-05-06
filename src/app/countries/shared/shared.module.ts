@@ -15,7 +15,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
   declarations: [
     SearchBoxComponent,
     LoadingSpinnerComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
   exports: [
     SidebarComponent,
     SearchBoxComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
   ]
 })
 export class SharedModule { }

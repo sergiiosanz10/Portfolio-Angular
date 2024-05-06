@@ -25,6 +25,6 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     CountriesRoutingModule,
     SharedModule,
 
-  ]
+  ],
 })
 export class CountriesModule { }
