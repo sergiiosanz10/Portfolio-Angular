@@ -2,14 +2,21 @@
 <div #map></div>
 
 
+  <form [formGroup]="myForm">
 
-  <select class="form-control">
-    <option value="">-- Selecione una Comunidad autónoma --</option>
-    <option class="list-group-item" *ngFor="let comunidad of comunidades?.results; let i = index" (click)="setcomunidadSelected(comunidad.acom_name)">{{comunidad.acom_name}}</option>
-  </select>
+    <select class="form-control" formControlName="comunidad">
+      <option value="">-- Selecione una Comunidad autónoma --</option>
+      <option class="list-group-item" *ngFor="let comunidad of comunidades?.results" [value]="comunidad.acom_name">{{comunidad.acom_name}}</option>
+    </select>
 
-  <select class="form-control provincias">
-    <option value="">-- Selecione una Provincia --</option>
-    <option class="list-group-item" *ngFor="let province of comunidadSelected; let i = index">{{province}}</option>
-  </select>
+    <select class="form-control provincias" formControlName="provincia" *ngIf="myForm.get('comunidad')?.value">
+      <option value="">-- Selecione una Provincia --</option>
+      <option class="list-group-item" *ngFor="let province of provinces?.results" [value]="province.prov_name">{{province.prov_name}}</option>
+    </select>
+
+    <select class="form-control municipios" formControlName="municipio" *ngIf="myForm.get('provincia')?.value">
+      <option value="">-- Selecione un Municipio --</option>
+      <option class="list-group-item" *ngFor="let municipio of municipios?.results" [value]="municipio.mun_name">{{municipio.mun_name}}</option>
+    </select>
+  </form>
 

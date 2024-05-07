@@ -7,6 +7,7 @@ import mapboxgl from 'mapbox-gl';
 
 import { MapsRoutingModule } from './maps-routing.module';
 import { MapPageComponent } from './pages/map-page/map-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { MapPageComponent } from './pages/map-page/map-page.component';
   ],
   imports: [
     CommonModule,
-    MapsRoutingModule
+    MapsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class MapsModule { }
