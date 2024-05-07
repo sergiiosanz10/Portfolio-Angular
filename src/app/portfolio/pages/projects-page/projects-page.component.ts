@@ -43,7 +43,7 @@ export class ProjectsPageComponent {
     {
       name: 'Maps',
       description: 'This is an application Maps.',
-      img: '...',
+      img: '../../../../assets/img/maps.webp',
       route: 'maps'
     },
   ]
