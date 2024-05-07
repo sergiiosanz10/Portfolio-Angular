@@ -12,6 +12,8 @@ export class ModalComponent {
   @Input({ required: true })
   public flagSelected?: Flags;
 
+
+  
   getCurrency() {
     if (this.flagSelected == undefined) {
       return;
