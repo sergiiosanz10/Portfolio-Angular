@@ -13,7 +13,6 @@ export class GraphicPageComponent implements OnInit, OnChanges{
 
   ngOnInit(): void {
     this.multi =  this.getGraphics()
-    console.log(this.multi);
   }
 
   ngOnChanges( ):void {

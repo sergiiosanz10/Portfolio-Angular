@@ -5,7 +5,11 @@ import { MainPageComponent } from './pages/main-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainPageComponent
+    component: MainPageComponent,
+  },
+  {
+    path: ':capital',
+    component:MainPageComponent
   }
 ];
 

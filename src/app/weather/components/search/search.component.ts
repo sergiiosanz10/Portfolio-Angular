@@ -6,6 +6,8 @@ import { City, ForeCast } from '../../interfaces/forecast.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { CityAutocomplete } from '../../interfaces/city.interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'search-page',
@@ -28,15 +30,30 @@ export class SearchComponent implements OnInit {
   public value: string = '';
   public search: FormControl<string | null> = new FormControl('');
 
-  constructor(private weatherService: WeatherService, private _snackBar: MatSnackBar) { }
+  constructor(
+    private weatherService: WeatherService,
+    private _snackBar: MatSnackBar,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+  ) { }
 
 
   // Lifecylce
-
-
-
   ngOnInit() {
     this.history = this.weatherService.tagsHistory;
+
+    this.activatedRoute.params
+    .pipe(
+      switchMap(({capital}) => this.weatherService.getweather(capital, '' ))
+    ).subscribe( capital => {
+      if(!capital) return this.router.navigate(['/weather']);
+
+
+      this.weather = capital;
+
+      this.searchflagWeather(capital)
+      return;
+    })
   }
 
   openSnackBar(message: string, action: string) {
@@ -91,14 +108,35 @@ export class SearchComponent implements OnInit {
     this.weatherService.getweather(this.search.value!, this.selectedCity!.country)
       .subscribe(data => {
         this.weather = data;
-        console.log(data);
-
         this.weatherService.conseguirDatos(data);
 
       });
 
     //CONSEGUIR DATOS DE LOS 7 DIAS
     this.weatherService.getForecast(this.search.value!, this.selectedCity!.country)
+      .subscribe(data => {
+        this.forecast = data;
+        this.weatherService.conseguirDatoForecast(data);
+      });
+
+    this.search.setValue('');
+
+  }
+
+  searchflagWeather(capital: Weather) {
+
+    const city: City = { name:capital.name, country: capital.sys.country};
+    this.weatherService.organizeHistory(city);
+
+    this.weatherService.getweather(capital.name, '')
+      .subscribe(data => {
+        this.weather = data;
+        this.weatherService.conseguirDatos(data);
+
+      });
+
+    //CONSEGUIR DATOS DE LOS 7 DIAS
+    this.weatherService.getForecast(capital.name, '')
       .subscribe(data => {
         this.forecast = data;
         this.weatherService.conseguirDatoForecast(data);
@@ -132,6 +170,7 @@ export class SearchComponent implements OnInit {
       });
 
   }
+
 
   deleteTagCity(tag: City) {
     this.weatherService.deleteTag(tag);
