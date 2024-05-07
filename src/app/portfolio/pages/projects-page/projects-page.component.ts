@@ -40,6 +40,12 @@ export class ProjectsPageComponent {
       img: '../../../../assets/img/flags.webp',
       route: 'flags'
     },
+    {
+      name: 'Maps',
+      description: 'This is an application Maps.',
+      img: '...',
+      route: 'maps'
+    },
   ]
 
   constructor(private customCursor: CustomCursorComponent) { }

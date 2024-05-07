@@ -20,5 +20,5 @@ export class NavbarComponent {
     this.customCursor.setIsHovered(false);
   }
 
-  
+
 }

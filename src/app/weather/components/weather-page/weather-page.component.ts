@@ -46,7 +46,7 @@ export class WeatherPageComponent implements OnInit{
   if(this.capital){
     return
   } else{
-    
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const latitude = position.coords.latitude;

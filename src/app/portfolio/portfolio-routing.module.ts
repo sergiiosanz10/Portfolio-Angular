@@ -42,6 +42,10 @@ const routes: Routes = [
         path: 'flags',
         loadChildren: () => import('../flags/flags.module').then(m => m.FlagsModule)
       },
+      {
+        path: 'maps',
+        loadChildren: () => import('../maps/maps.module').then(m => m.MapsModule)
+      },
     ]
   },
   {
@@ -52,7 +56,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild( routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
