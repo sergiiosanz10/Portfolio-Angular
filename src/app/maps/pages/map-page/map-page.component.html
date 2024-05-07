@@ -1,4 +1,15 @@
-<div class="container-fluid p-0">
 
 <div #map></div>
-</div>
+
+
+
+  <select class="form-control">
+    <option value="">-- Selecione una Comunidad autónoma --</option>
+    <option class="list-group-item" *ngFor="let comunidad of comunidades?.results; let i = index" (click)="setcomunidadSelected(comunidad.acom_name)">{{comunidad.acom_name}}</option>
+  </select>
+
+  <select class="form-control provincias">
+    <option value="">-- Selecione una Provincia --</option>
+    <option class="list-group-item" *ngFor="let province of comunidadSelected; let i = index">{{province}}</option>
+  </select>
+

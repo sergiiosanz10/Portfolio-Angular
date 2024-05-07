@@ -1,6 +1,19 @@
-
-
 div {
   width: 100vw;
   height: 100vh;
+}
+
+.form-control {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  cursor: pointer;
+  width: 280px;
+}
+.provincias {
+  position: fixed;
+  top: 140px;
+  right: 20px;
+  cursor: pointer;
+  width: 280px;
 }
