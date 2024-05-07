@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Weather } from '../../interfaces/weather.interface';
 import { ForeCast, List } from '../../interfaces/forecast.interface';
 import { WeatherService } from '../../services/weather.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,12 @@ export class WeatherPageComponent implements OnInit{
 
   @Input() weathers: Weather | undefined;
 
-  constructor(private weatherService:WeatherService){}
+  public capital:string = ''
+
+  constructor(
+    private weatherService:WeatherService,
+    private activatedRoute: ActivatedRoute,
+  ){}
 
   get weather(): Weather | undefined{
     return this.weatherService.weatherList
@@ -29,21 +35,33 @@ export class WeatherPageComponent implements OnInit{
   }
 
 
+
   ngOnInit(): void {
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      this.weatherService.getweatherGeo(latitude, longitude)
-      .subscribe(data => {
-        this.weathers=data;
-        this.weatherService.conseguirDatos(data);
+    this.activatedRoute.params
+      .subscribe( params => {
+        this.capital = params['capital']
+      })
+
+  if(this.capital){
+    return
+  } else{
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        this.weatherService.getweatherGeo(latitude, longitude)
+        .subscribe(data => {
+          this.weathers=data;
+          this.weatherService.conseguirDatos(data);
+        });
       });
-    });
-  } else {
-    console.log("Geolocation is not supported by this browser.");
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
   }
+
 }
 
 //Fondo segun el tiempo
