@@ -98,7 +98,6 @@ export class MapPageComponent {
 
       this.marker = new Marker({
         color: 'red',
-        draggable: true
       })
       this.marker.setLngLat([this.selectedMunicipio.geo_point_2d.lon, this.selectedMunicipio.geo_point_2d.lat]).addTo(this.map);
 
@@ -117,7 +116,7 @@ export class MapPageComponent {
     div.classList.add('div_btn');
     bnt.innerText="Tiempo";
     bnt.classList.add("btn_weather");
-    
+
     bnt.setAttribute("href",`/portfolio/projects/weather/${this.selectedMunicipio?.mun_name}`);
     div.appendChild(bnt);
 
