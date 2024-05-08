@@ -25,7 +25,7 @@ div {
   width: 280px;
 }
 
-.form-control:hover{
+.form-control:hover {
   background-color: #212529;
   color: white;
 }
@@ -42,7 +42,20 @@ div {
   width: 200px;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #212529;
   color: white;
+}
+
+.dot {
+  position: fixed;
+  top: 56%;
+  left: 49%;
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border: 3px solid #454545;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 999;
 }
