@@ -142,7 +142,6 @@ export class MapPageComponent {
 
     this.marker = new Marker({
       color: color,
-      draggable: true
     })
       .setLngLat(lngLat)
       .addTo(this.map);
@@ -153,6 +152,9 @@ export class MapPageComponent {
   }
 
   weatherMarker(lngLat: LngLat) {
+    this.myForm.get('comunidad')?.setValue(''),
+    this.myForm.get('provincia')?.setValue(''),
+    this.myForm.get('municipio')?.setValue(''),
 
     this.mapsService.getweather(lngLat.lat, lngLat.lng)
       .subscribe(({ name }) => {
