@@ -24,3 +24,25 @@ div {
   cursor: pointer;
   width: 280px;
 }
+
+.form-control:hover{
+  background-color: #212529;
+  color: white;
+}
+
+.btn {
+  border: 2px solid grey;
+  padding: 10px;
+  background-color: white;
+  transition: all 300ms;
+  position: fixed;
+  top: 90px;
+  left: 20px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.btn:hover{
+  background-color: #212529;
+  color: white;
+}
