@@ -19,7 +19,7 @@ export class ProjectsPageComponent {
     {
       name: 'Taskify',
       description: 'This is an application to organize tasks.',
-      img: '../../../../assets/img/taski.webp',
+      img: '../../../../assets/img/taskify.webp',
       route: 'https://taskify.sergiiosanz.es/'
     },
     {
