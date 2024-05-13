@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoadgingSpinerComponent } from './components/loadging-spiner/loadging-spiner.component';
 import { RouterModule } from '@angular/router';
 import { CustomCursorComponent } from './components/custom-cursor/cursor-component';
+import { Error404Component } from './components/error404/error404.component';
 
 
 
@@ -12,7 +13,7 @@ import { CustomCursorComponent } from './components/custom-cursor/cursor-compone
   declarations: [
     NavbarComponent,
     LoadgingSpinerComponent,
-    CustomCursorComponent
+    CustomCursorComponent,
   ],
   imports: [
     CommonModule,
