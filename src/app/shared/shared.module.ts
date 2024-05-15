@@ -6,6 +6,9 @@ import { LoadgingSpinerComponent } from './components/loadging-spiner/loadging-s
 import { RouterModule } from '@angular/router';
 import { CustomCursorComponent } from './components/custom-cursor/cursor-component';
 import { Error404Component } from './components/error404/error404.component';
+import { SergioSanzComponent } from './components/sergio-sanz/sergio-sanz.component';
+import { SkillsIconsComponent } from './components/skills-icons/skills-icons.component';
+import { HeaderImageComponent } from './components/header-image/header-image.component';
 
 
 
@@ -14,6 +17,9 @@ import { Error404Component } from './components/error404/error404.component';
     NavbarComponent,
     LoadgingSpinerComponent,
     CustomCursorComponent,
+    SergioSanzComponent,
+    SkillsIconsComponent,
+    HeaderImageComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,10 @@ import { Error404Component } from './components/error404/error404.component';
   exports: [
     NavbarComponent,
     LoadgingSpinerComponent,
-    CustomCursorComponent
+    CustomCursorComponent,
+    SergioSanzComponent,
+    SkillsIconsComponent,
+    HeaderImageComponent
   ]
 })
 export class SharedModule { }

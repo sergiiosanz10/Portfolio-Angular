@@ -1,0 +1,38 @@
+@media (max-width: 1375px) {
+  .imagen {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 120vh;
+  }
+}
+
+@media (max-width: 633px) {
+
+  .imagen {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 80vh;
+  }
+}
+@media (max-width: 495px) {
+  .imagen {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 60vh;
+  }
+}

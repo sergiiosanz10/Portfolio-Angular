@@ -1,49 +1,5 @@
-
-.header {
-  position: relative;
-  overflow: hidden;
-  .title {
-    font-family: "Anton", sans-serif;
-    font-size: 3em;
-    z-index: 2;
-    color: black;
-  }
-
-  .outlined-text {
-    font-size: 150px;
-    width: auto;
-    -webkit-text-stroke: 1px black;
-    color: transparent;
-    position: absolute;
-    z-index: 1;
-  }
-}
-
 .text-container {
   height: auto !important;
-}
-
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-
-  i {
-    font-size: 5em;
-  }
-}
-
-.icons{
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 
 
@@ -78,54 +34,10 @@
     height: auto;
 
   }
-
-  .imagen {
-    width: 100%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    object-fit: cover; /* Añade esta línea */
-    object-position: top; /* Añade esta línea */
-    height: 120vh;
-  }
 }
 
 @media (max-width: 633px) {
-  .header {
-    .title {
-      font-size: 2em;
-    }
-
-    .outlined-text {
-      font-size: 100px;
-    }
-  }
   .text-container {
     height: auto !important;
-  }
-
-  .imagen {
-    width: 100%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    object-fit: cover; /* Añade esta línea */
-    object-position: top; /* Añade esta línea */
-    height: 80vh;
-  }
-}
-@media (max-width: 495px) {
-
-  .imagen {
-    width: 100%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    object-fit: cover; /* Añade esta línea */
-    object-position: top; /* Añade esta línea */
-    height: 60vh;
   }
 }
