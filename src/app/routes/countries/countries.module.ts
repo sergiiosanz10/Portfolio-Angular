@@ -5,9 +5,11 @@ import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.
 import { CountryPageComponent } from './pages/country-page/country-page.component';
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
 import { CountriesRoutingModule } from './countries-routing.module';
-import { SharedModule } from '../shared/shared.module';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LoadingSpinnerCountriesComponent } from './components/loading-spinner/loading-spinner.component';
 
 
 
@@ -19,11 +21,13 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     ByRegionPageComponent,
     CountryTableComponent,
     MainPageComponent,
+    SearchBoxComponent,
+    LoadingSpinnerCountriesComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
     CountriesRoutingModule,
-    SharedModule,
 
   ],
 })

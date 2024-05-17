@@ -5,7 +5,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoadgingSpinerComponent } from './components/loadging-spiner/loadging-spiner.component';
 import { RouterModule } from '@angular/router';
 import { CustomCursorComponent } from './components/custom-cursor/cursor-component';
-import { Error404Component } from './components/error404/error404.component';
 import { SergioSanzComponent } from './components/sergio-sanz/sergio-sanz.component';
 import { SkillsIconsComponent } from './components/skills-icons/skills-icons.component';
 import { HeaderImageComponent } from './components/header-image/header-image.component';

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from '../../../../../shared/interfaces/country.interfaces';
-import { Region } from '../../../../../shared/interfaces/region.type';
-import { CountriesService } from '../../../../../shared/services/countries.service';
+import { Country } from '../../../../shared/interfaces/country.interfaces';
+import { Region } from '../../../../shared/interfaces/region.type';
+import { CountriesService } from '../../../../shared/services/countries.service';
+
 
 
 

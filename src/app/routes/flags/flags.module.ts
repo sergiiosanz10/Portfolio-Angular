@@ -6,8 +6,8 @@ import { FlagPageComponent } from './pages/flag-page/flag-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { MaterialModule } from '../../shared/modules/material.module';
-import { SharedModule } from '../countries/shared/shared.module';
 import { FlagsComponent } from './components/flags/flags.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({

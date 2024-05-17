@@ -5,9 +5,9 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 import { MatCardModule } from '@angular/material/card';
-import { SharedModule } from '../countries/shared/shared.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 

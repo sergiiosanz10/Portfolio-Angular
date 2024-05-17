@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FlagsService } from '../../../../shared/services/flags.service';
-import { Flags } from '../../../../shared/interfaces/country.interfaces';
+import { Flags } from '../../../../shared/interfaces/flags.interfaces';
+
 
 
 @Component({
