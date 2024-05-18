@@ -4,6 +4,7 @@ import { AboutmePageComponent } from './pages/aboutme-page/aboutme-page.componen
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { isAuthenticatedGuard, isNotAuthenticatedGuard } from '../Taskify/auth/guards';
 
 
 const routes: Routes = [
@@ -45,6 +46,16 @@ const routes: Routes = [
       {
         path: 'maps',
         loadChildren: () => import('../maps/maps.module').then(m => m.MapsModule)
+      },
+      {
+        path: 'auth',
+        canActivate: [isNotAuthenticatedGuard],
+        loadChildren: () => import('../Taskify/auth/auth.module').then(m => m.AuthModule)
+      },
+      {
+        path: 'dashboard',
+        canActivate: [isAuthenticatedGuard],
+        loadChildren: () => import('../Taskify/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
     ]
   },

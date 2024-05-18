@@ -54,7 +54,6 @@ $Portfolio-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
-  overflow-x: hidden;
   margin: 0 ;
   padding: 0 auto;
   cursor: none !important;
@@ -106,4 +105,32 @@ mat-card{
 .btn_weather:hover{
   background-color: #212529;
   color: white;
+}
+
+//##### Taskify #####
+
+.description{
+  width: 300px;
+  margin: 5px;
+}
+.label{
+  width: 160px;
+  margin: 5px;
+}
+
+.time{
+  width: 100px;
+  margin: 5px;
+}
+
+.color{
+  height: 35px;
+}
+
+.card .color{
+  width: 60px;
+}
+
+.card .date{
+  width: 140px;
 }

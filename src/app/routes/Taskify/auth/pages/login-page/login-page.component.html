@@ -1,0 +1,30 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <form class="login-form text-center p-5 border mx-auto" autocomplete="off" [formGroup]="myForm">
+
+    <h1 class="mb-5 font-weight-light">Login</h1>
+
+    <div class="form-group">
+      <input type="email"
+             class="form-control border-bottom border-0 rounded-0"
+             placeholder="Correo electrónico"
+             formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <input type="password"
+             class="form-control border-bottom border-0 rounded-0"
+             placeholder="Ingrese su contraseña"
+             formControlName="password">
+    </div>
+
+    <button class="btn btn_login mt-4 rounded w-100"
+            type="submit"
+            [disabled]="myForm.invalid"
+            (click)="login()">
+      Login
+    </button>
+
+    <p class="mt-3 font-weight-normal">¿No tienes cuenta? <a routerLink="/auth/register"><strong>Crear una aquí</strong></a></p>
+
+  </form>
+</div>

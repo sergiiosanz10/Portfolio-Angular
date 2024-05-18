@@ -12,4 +12,8 @@
 7. ``` npm install @fortawesome/free-solid-svg-icons```
 8. ``` npm install --save mapbox-gl                  ```
 9. ``` npm i --save-dev @types/mapbox-gl             ```
+10. ``` npm install --save @fullcalendar/angular @fullcalendar/daygrid```
+11. ```npm install @fullcalendar/interaction```
+12. ```npm install sweetalert2```
+
 

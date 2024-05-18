@@ -8,8 +8,8 @@
           <img mat-card-image [src]="project.img" class="card-img-top" alt="Project image">
         </mat-card-content>
         <mat-card-actions>
-            <a [routerLink]="project.route" *ngIf="project.name !== 'Taskify'" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go Project</a>
-            <a [href]="project.route" *ngIf="project.name === 'Taskify'"class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go Project</a>
+            <a [routerLink]="project.route" class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go Project</a>
+            <!-- <a [href]="project.route" *ngIf="project.name === 'Taskify'"class="webBtn" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Go Project</a> -->
         </mat-card-actions>
       </mat-card>
     </div>

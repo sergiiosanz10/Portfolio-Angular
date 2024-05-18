@@ -1,0 +1,120 @@
+.form{
+  width: 260px;
+  margin: 5px;
+}
+
+.description{
+  width: 300px;
+  margin: 5px;
+}
+.label{
+  width: 160px;
+  margin: 5px;
+}
+
+.time{
+  width: 100px;
+  margin: 5px;
+}
+
+.color{
+  height: 35px;
+}
+
+.card .color{
+  width: 60px;
+}
+
+.card .date{
+  width: 140px;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .card-body,
+body.dark-mode .card-body .label-input100,
+body.dark-mode .modal-body .label-input100,
+body.dark-mode .form-control,
+body.dark-mode .modal-body,
+body.dark-mode .dropdown-menu,
+body.dark-mode .dropdown-item{
+  background-color: #454545;
+  color: #ffffff !important;
+}
+
+body.dark-mode .logout:hover{
+  background-color: #ffffff;
+  color: #212529;
+  border: 2px solid #f1f1f1;
+}
+
+body.dark-mode .fc-daygrid-day-number,
+body.dark-mode .fc-col-header-cell-cushion{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body.light-mode .fc-daygrid-day-number,
+body.light-mode .fc-col-header-cell-cushion{
+  text-decoration: none;
+}
+
+body.dark-mode input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #ffffff;
+}
+
+body.dark-mode .card-body input {
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+body.light-mode .card-body input {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+body.dark-mode .card-body input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid white !important;
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
+
+body.light-mode .card-body input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid black !important;
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
