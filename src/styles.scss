@@ -1,6 +1,6 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 @include mat.core();
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 $black: (
   50: #e0e0e0,
   100: #b3b3b3,
@@ -30,7 +30,7 @@ $black: (
     A100: #000000,
     A200: #000000,
     A400: #000000,
-    A700: #000000,
+    A700: #000000
   )
 );
 
@@ -38,23 +38,25 @@ $Portfolio-primary: mat.define-palette($black);
 $Portfolio-accent: mat.define-palette($black, A200, A100, A400);
 $Portfolio-warn: mat.define-palette($black);
 
-$Portfolio-theme: mat.define-light-theme((
-  color: (
-    primary: $Portfolio-primary,
-    accent: $Portfolio-accent,
-    warn: $Portfolio-warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0
-));
+$Portfolio-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Portfolio-primary,
+      accent: $Portfolio-accent,
+      warn: $Portfolio-warn
+    ),
+    typography: mat.define-typography-config(),
+    density: 0
+  )
+);
 
 @include mat.all-component-themes($Portfolio-theme);
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
-  margin: 0 ;
+* {
+  margin: 0;
   padding: 0 auto;
   cursor: none !important;
 }
@@ -62,27 +64,33 @@ $Portfolio-theme: mat.define-light-theme((
 body::-webkit-scrollbar {
   display: none;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-mat-card{
-  background: rgba( 255, 255, 255, 0.25 ) !important;
-  backdrop-filter: blur( 4px ) !important;
-  -webkit-backdrop-filter: blur( 4px ) !important;
+mat-card {
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
   border-radius: 10px !important;
-  border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   -webkit-border-radius: 10px !important;
   -moz-border-radius: 10px !important;
   -ms-border-radius: 10px !important;
   -o-border-radius: 10px !important;
 }
 
-.div_btn{
+.div_btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +98,7 @@ mat-card{
   height: 80px;
 }
 
-.btn_weather{
+.btn_weather {
   font-family: "Montserrat", sans-serif;
   border: 2px solid grey;
   padding: 10px;
@@ -102,35 +110,380 @@ mat-card{
   -o-transition: all 300ms;
 }
 
-.btn_weather:hover{
+.btn_weather:hover {
   background-color: #212529;
   color: white;
 }
 
 //##### Taskify #####
 
-.description{
+.description {
   width: 300px;
   margin: 5px;
 }
-.label{
+.label {
   width: 160px;
   margin: 5px;
 }
 
-.time{
+.time {
   width: 100px;
   margin: 5px;
 }
 
-.color{
+.color {
   height: 35px;
 }
 
-.card .color{
+.card .color {
   width: 60px;
 }
 
-.card .date{
+.card .date {
   width: 140px;
+}
+
+//ESTILOS PARA LOGIN Y REGISTRO
+.auth {
+  .box {
+    border: 1px solid black;
+    padding: 40px 90px;
+    margin: 10px;
+    border-radius: 20px;
+    background: rgba( 255, 255, 255, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+
+  .register-box{
+    border: 1px solid black;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 20px;
+    margin: 10px;
+    background: rgba( 255, 255, 255, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+
+  a {
+    font-family: Poppins !important;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+  }
+
+  a:focus {
+    outline: none !important;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #a64bf4;
+  }
+
+  /*---------------------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0px;
+  }
+
+  p {
+    font-family: Poppins !important;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+  }
+
+  ul,
+  li {
+    margin: 0px;
+    list-style-type: none;
+  }
+
+  /*---------------------------------------------*/
+  input {
+    outline: none;
+    border: none;
+  }
+
+  textarea {
+    outline: none;
+    border: none;
+  }
+
+  textarea:focus,
+  input:focus {
+    border-color: transparent !important;
+  }
+
+  /*---------------------------------------------*/
+  button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  /*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+  .txt1 {
+    font-family: Poppins !important;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #454545;
+  }
+
+  .txt2 {
+    font-family: Poppins !important;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    text-transform: uppercase;
+  }
+
+  .bg1 {
+    background-color: #3b5998;
+  }
+  .bg2 {
+    background-color: #1da1f2;
+  }
+  .bg3 {
+    background-color: #ea4335;
+  }
+
+  /*//////////////////////////////////////////////////////////////////
+[ login ]*/
+  .limiter {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .wrap-login100 {
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /*------------------------------------------------------------------
+[ Form ]*/
+
+  .login100-form {
+    width: 100%;
+  }
+
+  .login100-form-title {
+    display: block;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /*------------------------------------------------------------------
+[ Input ]*/
+
+  .wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+  }
+
+  .label-input100 {
+    font-family: Poppins !important;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+    padding-left: 7px;
+  }
+
+  .input100 {
+    font-family: Poppins;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.2;
+
+    display: block;
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    padding: 0 7px 0 43px;
+  }
+
+  .input100::placeholder {
+    font-family: Poppins;
+    font-size: 16px;
+    color: #454545;
+    line-height: 1.2;
+  }
+
+  /*---------------------------------------------*/
+  .focus-input100 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .focus-input100::after {
+    content: attr(data-symbol);
+    font-family: Material-Design-Iconic-Font;
+    color: #adadad;
+    font-size: 22px;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: calc(100% - 20px);
+    bottom: 0;
+    left: 0;
+    padding-left: 13px;
+    padding-top: 3px;
+  }
+
+  .focus-input100::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(96, 207, 220, 1) 0%, rgba(190, 52, 218, 1) 92%);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  .input100:focus + .focus-input100::before {
+    width: 100%;
+  }
+
+  .has-val.input100 + .focus-input100::before {
+    width: 100%;
+  }
+
+  .input100:focus + .focus-input100::after {
+    color: #a64bf4;
+  }
+
+  .has-val.input100 + .focus-input100::after {
+    color: #a64bf4;
+  }
+
+  /*------------------------------------------------------------------
+[ Button ]*/
+  .container-login100-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrap-login100-form-btn {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+    -moz-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+    -webkit-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+    -o-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+    -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  }
+
+  .login100-form-bgbtn {
+    position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    background: rgb(96, 207, 220);
+    background: linear-gradient(90deg, rgba(96, 207, 220, 1) 0%, rgba(190, 52, 218, 1) 92%);
+    top: 0;
+    left: -100%;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  .login100-form-btn {
+    font-family: Poppins;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+  }
+
+  .wrap-login100-form-btn:hover .login100-form-bgbtn {
+    left: 0;
+  }
+
+  .login100-form-btn:disabled {
+    background-color: grey;
+  }
 }
