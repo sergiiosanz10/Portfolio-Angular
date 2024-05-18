@@ -18,21 +18,6 @@ export class SideNavComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const theme = localStorage.getItem('theme');
-    const body = document.body;
-    const toggle = document.getElementById('toggle') as HTMLInputElement;
-    if (theme) {
-      body.classList.add(theme);
-      if (theme === 'dark-mode') {
-        toggle.checked = true;
-      } else {
-        toggle.checked = false;
-      }
-    } else {
-      body.classList.add('light-mode');
-      toggle.checked = false;
-    }
-
     this.userById()
   }
 
