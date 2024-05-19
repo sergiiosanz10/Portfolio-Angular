@@ -12,8 +12,8 @@ import { TaskResponse } from '../../../../../shared/interfaces/taskify.interface
 export class TareasAsignadasComponent implements OnInit {
 
 
-  private activeRoute = inject(Router)
   private DashboardService = inject(DashboardService);
+  private activatedRoute = inject(ActivatedRoute);
 
   public groupedTasks = signal<Map<string, TaskResponse[]> | undefined>(undefined);
   public tasksList = signal<TaskResponse[]>([]);
@@ -24,25 +24,17 @@ export class TareasAsignadasComponent implements OnInit {
   public listDate = signal<string[]>([]);
   public isLoading = signal<boolean>(false);
 
-  constructor(private activatedRoute: ActivatedRoute) {
-
-  }
-
 
   ngOnInit() {
-    console.log(this.isLoading());
-
     this.activatedRoute.params.subscribe((params: any) => {
-      console.log(params);
       this.type.set(params.type)
       if (this.type() == "all" || this.type() == "pending" || this.type() == "complete") {
-        this.filterParam.set('')
-        this.loadTasks()
+        this.filterParam.set('');
+        this.loadTasks();
       }
-      this.tasksList.set([])
-      this.listDate.set([])
+      this.tasksList.set([]);
+      this.listDate.set([]);
       this.isLoading.set(true);
-      console.log(this.isLoading());
     });
   }
 
@@ -101,6 +93,7 @@ export class TareasAsignadasComponent implements OnInit {
 
 
   deleteTask(id: string) {
+    this.isLoading.set(true);
     const token = sessionStorage.getItem('token');
     if (!token) return;
 
@@ -111,6 +104,7 @@ export class TareasAsignadasComponent implements OnInit {
         this.sortTasks();
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
+        this.isLoading.set(false);
       });
   }
 
@@ -138,9 +132,10 @@ export class TareasAsignadasComponent implements OnInit {
   }
 
   filterByLabel(label: string) {
+    this.isLoading.set(true);
     this.filterParam.set(label)
     this.groupedTasks.set(new Map());
-    this.loadTasks()
+    this.loadTasks();
   }
 
   actualizarDato(data: TaskResponse[]): void {

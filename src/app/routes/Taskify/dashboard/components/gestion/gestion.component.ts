@@ -11,7 +11,8 @@ export class GestionComponent {
 
   private dashboardService = inject(DashboardService);
 
-  public usersList = signal<User[]>([])
+  public usersList = signal<User[]>([]);
+  public isLoading = signal<boolean>(false);
   public users: Signal<User[]> = computed<User[]>( () => this.usersList())
 
 
@@ -20,11 +21,15 @@ export class GestionComponent {
   }
 
   loadUsers() {
+    this.isLoading.set(true);
     const token = sessionStorage.getItem('token');
     if (!token) return;
 
     this.dashboardService.getUsers(token)
-      .subscribe( users => this.usersList.set(users));
+      .subscribe( users => {
+        this.usersList.set(users);
+        this.isLoading.set(false);
+      });
   }
 
   deleteUser(id: string) {
