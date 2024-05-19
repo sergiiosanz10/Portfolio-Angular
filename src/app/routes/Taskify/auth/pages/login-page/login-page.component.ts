@@ -31,10 +31,9 @@ export class LoginPageComponent {
     }
 
     return true;
-  })
+  });
 
   public authStatusChangedEffect = effect( () => {
-
     switch(this.authService.authStatus()){
       case AuthStatus.checking:
         return;
@@ -44,10 +43,8 @@ export class LoginPageComponent {
       case AuthStatus.noAuthenticated:
         this.router.navigateByUrl('/portfolio/projects/auth/login');
         return;
-
     }
-
-  })
+  });
 
 
   login(){

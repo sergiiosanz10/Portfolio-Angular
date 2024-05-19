@@ -116,6 +116,25 @@ mat-card {
 }
 
 //##### Taskify #####
+.card-body input {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+
+.card-body input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid black !important;
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
 
 .description {
   width: 300px;
@@ -273,11 +292,6 @@ mat-card {
 
   /*//////////////////////////////////////////////////////////////////
 [ login ]*/
-  .limiter {
-    width: 100%;
-    margin: 0 auto;
-  }
-
   .container-login100 {
     width: 100%;
     min-height: 100vh;
