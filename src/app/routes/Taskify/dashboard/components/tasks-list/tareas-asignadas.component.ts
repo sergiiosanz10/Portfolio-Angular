@@ -106,6 +106,8 @@ export class TareasAsignadasComponent implements OnInit {
         this.tasksList.set(this.tasksList().filter(task => task.taskId !== id))
         this.groupTasksByDate();
         this.sortTasks();
+        this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
+        this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
       });
   }
 

@@ -12,8 +12,12 @@
           data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-filter"></i>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" *ngFor="let label of uniqueLabels()" (click)="filterByLabel(label)">{{label}}</a>
+        <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+          <li *ngIf="uniqueLabels().length > 0">
+            <a class="dropdown-item p-0" *ngFor="let label of uniqueLabels()" (click)="filterByLabel(label)">{{label}}</a>
+          </li>
+          <li *ngIf="uniqueLabels().includes('')">
+            <span class="dropdown-item">No hay etiquetas</span>
           </li>
         </ul>
       </div>
