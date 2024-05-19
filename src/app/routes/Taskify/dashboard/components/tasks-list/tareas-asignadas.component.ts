@@ -22,25 +22,27 @@ export class TareasAsignadasComponent implements OnInit {
   public filterParam = signal<string>('');
   public type = signal<string>('');
   public listDate = signal<string[]>([]);
+  public isLoading = signal<boolean>(false);
 
-  constructor(private activatedRoute: ActivatedRoute){
+  constructor(private activatedRoute: ActivatedRoute) {
 
   }
 
 
   ngOnInit() {
-    console.log()
+    console.log(this.isLoading());
 
     this.activatedRoute.params.subscribe((params: any) => {
       console.log(params);
       this.type.set(params.type)
       if (this.type() == "all" || this.type() == "pending" || this.type() == "complete") {
-            this.filterParam.set('')
-            this.loadTasks()
-            console.log(this.type());
-          }
-          this.tasksList.set([])
-          this.listDate.set([])
+        this.filterParam.set('')
+        this.loadTasks()
+      }
+      this.tasksList.set([])
+      this.listDate.set([])
+      this.isLoading.set(true);
+      console.log(this.isLoading());
     });
   }
 
@@ -56,6 +58,7 @@ export class TareasAsignadasComponent implements OnInit {
         this.sortTasks();
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
+        this.isLoading.set(false);
       });
   }
 

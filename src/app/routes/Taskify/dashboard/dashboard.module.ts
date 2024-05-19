@@ -12,6 +12,7 @@ import { ModalComponent } from '../components/modal/modal.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { AlertComponent } from '../components/alert/alert.component';
 import { SideNavComponent } from '../components/side-nav/side-nav.component';
+import { SharedModule } from '../../../shared/shared.module';
 
 
 
@@ -32,7 +33,7 @@ import { SideNavComponent } from '../components/side-nav/side-nav.component';
     ReactiveFormsModule,
     FormsModule,
     FullCalendarModule,
-
+    SharedModule
   ]
 })
 export class DashboardModule { }

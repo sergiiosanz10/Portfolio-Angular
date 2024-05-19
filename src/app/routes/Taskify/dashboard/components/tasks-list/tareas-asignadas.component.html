@@ -30,7 +30,7 @@
   />
 
   <!-- Task Container -->
-  <div class="tareasContainer m-4">
+  <div class="tareasContainer m-4" *ngIf="!isLoading()">
     <div *ngFor="let date of listDate()">
 
       <div *ngIf="groupedTasks() && groupedTasks()?.get(date)!= undefined">
@@ -97,5 +97,6 @@
 
     </div>
   </div>
-  <shared-alert *ngIf="listDate().length <= 0 "></shared-alert>
+  <shared-loadging-spiner class="d-flex align-items-center justify-content-center pt-5" *ngIf="isLoading()"></shared-loadging-spiner>
+  <shared-alert *ngIf="listDate().length === 0 && !isLoading()"></shared-alert>
 </div>
