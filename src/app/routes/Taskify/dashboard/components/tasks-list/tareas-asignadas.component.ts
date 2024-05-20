@@ -129,7 +129,6 @@ export class TareasAsignadasComponent implements OnInit {
 
   sortTasks() {
     this.tasksList().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-    console.log(this.tasksList());
   }
 
   filterByLabel(label: string) {
@@ -139,9 +138,9 @@ export class TareasAsignadasComponent implements OnInit {
     this.loadTasks();
   }
 
-  actualizarDato(data: TaskResponse[]): void {
+  actualizarTaskList(data: TaskResponse[]): void {
     this.tasksList.set(data);
-    this.ngOnInit()
+    this.ngOnInit();
   }
 
 }

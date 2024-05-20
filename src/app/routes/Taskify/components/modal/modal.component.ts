@@ -43,8 +43,8 @@ export class ModalComponent {
     this.DashboardService.newTask(taskData)
       .subscribe(task => {
         this.tasksList().push(task);
-        this.sortTasks();
         this.groupTasksByDate();
+        this.sortTasks();
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         this.datoActualizado.emit(this.tasksList());

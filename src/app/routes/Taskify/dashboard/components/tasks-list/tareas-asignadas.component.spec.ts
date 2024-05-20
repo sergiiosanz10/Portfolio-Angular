@@ -15,7 +15,7 @@ const listTask: TaskResponse[] = [
     description: 'Task 1',
     time_start: '12:00',
     time_end: '13:00',
-    date: '12-05-2024',
+    date: '2024-05-12',
     color: '#454545',
     status: false,
   },
@@ -26,7 +26,7 @@ const listTask: TaskResponse[] = [
     description: 'Task 2',
     time_start: '12:00',
     time_end: '13:00',
-    date: '18-05-2024',
+    date: '2024-05-18',
     color: '#454545',
     status: true,
   },
@@ -37,7 +37,7 @@ const listTask: TaskResponse[] = [
     description: 'Task 3',
     time_start: '12:00',
     time_end: '13:00',
-    date: '12-05-2024',
+    date: '2024-05-12',
     color: '#454545',
     status: false,
   },
@@ -152,28 +152,28 @@ describe("TareasAsignadasComponent", () => {
 
     expect(component.groupedTasks()?.size).toBe(2);
     expect(component.listDate()?.length).toBe(3);
-    expect(component.groupedTasks()?.get('12-05-2024')).toEqual(listTask.filter(task => task.date === '12-05-2024'));
+    expect(component.groupedTasks()?.get('2024-05-12')).toEqual(listTask.filter(task => task.date === '2024-05-12'));
   });
 
   //? GET TASK ALL IN THE DAY
   it('getTaskListInTheDay get tasks ALL in the one date', () => {
     spyOn(component, 'type').and.returnValue("all");
     component.tasksList.set(listTask);
-    expect(component.getTaskListInTheDay('12-05-2024').length).toBe(2);
+    expect(component.getTaskListInTheDay('2024-05-12').length).toBe(2);
   });
 
   //? GET TASK PENDING IN THE DAY
   it('getTaskListInTheDay get tasks PENDING in the one date', () => {
     spyOn(component, 'type').and.returnValue("pending");
     component.tasksList.set(listTask);
-    expect(component.getTaskListInTheDay('18-05-2024').length).toBe(0);
+    expect(component.getTaskListInTheDay('2024-05-18').length).toBe(0);
   });
 
   //? GET TASK COMPLETE IN THE DAY
   it('getTaskListInTheDay get tasks COMPLETE in the one date', () => {
     spyOn(component, 'type').and.returnValue("complete");
     component.tasksList.set(listTask);
-    expect(component.getTaskListInTheDay('18-05-2024').length).toBe(1);
+    expect(component.getTaskListInTheDay('2024-05-18').length).toBe(1);
   });
 
   //? DELETE TASK
@@ -210,17 +210,51 @@ describe("TareasAsignadasComponent", () => {
   });
 
   //? SORT TASKS
-  fit('sortTasks should sort tasks by date', () => {
+  it('sortTasks should sort tasks by date', () => {
     component.tasksList.set(listTask);
 
     component.sortTasks();
 
-    expect(component.tasksList()[0].date).toBe('12-05-2024');
-    expect(component.tasksList()[1].date).toBe('12-05-2024');
-    expect(component.tasksList()[2].date).toBe('18-05-2024');
-
-
+    expect(component.tasksList()[0].date).toBe('2024-05-12');
+    expect(component.tasksList()[1].date).toBe('2024-05-12');
+    expect(component.tasksList()[2].date).toBe('2024-05-18');
   });
 
+  //? FILTER TASKS
+  it('should set isLoading to true, set filterParam to provided label, set groupedTasks to new Map, and call loadTasks', () => {
+    const label = 'test label';
+    const loadTasksSpy = spyOn(component, 'loadTasks');
+
+    component.filterByLabel(label);
+
+    expect(component.filterParam()).toBe(label);
+    expect(component.groupedTasks()).toEqual(new Map());
+    expect(loadTasksSpy).toHaveBeenCalled();
+  });
+
+  //? UPDATE TASKS
+  it('should set tasksList to provided data and call ngOnInit', () => {
+    const data: TaskResponse[] = [
+      {
+        taskId: 'Nueva',
+        label: 'Nueva',
+        name: 'Task nueva',
+        description: 'Task nueva',
+        time_start: '12:00',
+        time_end: '13:00',
+        date: '2024-05-12',
+        color: '#454545',
+        status: false,
+      },
+    ];
+
+    const ngOnInitSpy = spyOn(component, 'ngOnInit');
+
+    component.actualizarTaskList(data);
+
+    expect(component.tasksList()).toEqual(data);
+
+    expect(ngOnInitSpy).toHaveBeenCalled();
+  });
 
 })
