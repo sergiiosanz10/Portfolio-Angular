@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomCursorComponent } from '../custom-cursor/cursor-component';
+import { CustomCursorComponent } from '../custom-cursor/cursor.component';
 
 @Component({
   selector: 'shared-navbar',
@@ -9,7 +9,7 @@ import { CustomCursorComponent } from '../custom-cursor/cursor-component';
 
 export class NavbarComponent {
 
-  constructor(private customCursor: CustomCursorComponent) {}
+  constructor(private customCursor: CustomCursorComponent) { }
 
 
   onMouseEnter() {

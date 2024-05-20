@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { CustomCursorComponent } from '../../../../shared/components/custom-cursor/cursor-component';
+import { CustomCursorComponent } from '../../../../shared/components/custom-cursor/cursor.component';
 import { environment } from '../../../../../environments/environment.development';
 
 

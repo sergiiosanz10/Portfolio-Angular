@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DashboardService } from '../../../../../shared/services/dashboard.service';
 import { TaskResponse } from '../../../../../shared/interfaces/taskify.interface';
 
@@ -75,11 +75,11 @@ export class TareasAsignadasComponent implements OnInit {
 
     let list = this.tasksList().filter(task => {
 
-      if ((this.type() === "all" || this.type == undefined) && task.date === date) {
+      if ((this.type() == "all" || this.type == undefined) && task.date === date) {
         return true;
-      } else if (this.type() === "pending" && task.date === date && task.status === false) {
+      } else if (this.type() == "pending" && task.date === date && task.status === false) {
         return true;
-      } else if (this.type() === "complete" && task.date === date && task.status === true) {
+      } else if (this.type() == "complete" && task.date === date && task.status === true) {
         return true;
       }
       return false;
@@ -129,6 +129,7 @@ export class TareasAsignadasComponent implements OnInit {
 
   sortTasks() {
     this.tasksList().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    console.log(this.tasksList());
   }
 
   filterByLabel(label: string) {
