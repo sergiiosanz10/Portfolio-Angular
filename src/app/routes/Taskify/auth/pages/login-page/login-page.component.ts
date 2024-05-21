@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -17,7 +17,7 @@ export class LoginPageComponent {
   private authService = inject(AuthService);
   private router      = inject(Router)
 
-  public loading = true;
+  public Auth: string = '';
 
   public myForm: FormGroup = this.fb.group({
     email:    ['', [Validators.required, Validators.email]],
@@ -36,21 +36,27 @@ export class LoginPageComponent {
   public authStatusChangedEffect = effect( () => {
     switch(this.authService.authStatus()){
       case AuthStatus.checking:
+        this.Auth = AuthStatus.checking;
         return;
       case AuthStatus.authenticated:
+        this.Auth = AuthStatus.authenticated;
         this.router.navigateByUrl('/portfolio/projects/dashboard');
         return;
       case AuthStatus.noAuthenticated:
+        this.Auth = AuthStatus.noAuthenticated;
         this.router.navigateByUrl('/portfolio/projects/auth/login');
         return;
     }
   });
 
+  constructor(){
+    console.log(this.Auth);
+
+  }
 
   login(){
 
     const {email, password} = this.myForm.value;
-
     this.authService.login(email, password)
       .subscribe( {
         next: () => this.router.navigateByUrl('/portfolio/projects/dashboard'),

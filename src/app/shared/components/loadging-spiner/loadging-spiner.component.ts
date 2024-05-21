@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'shared-loadging-spiner',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './loadging-spiner.component.scss'
 })
 export class LoadgingSpinerComponent {
-
+  @Input() color: string = '#454545';
 }
