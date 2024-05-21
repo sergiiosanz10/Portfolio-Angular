@@ -1,15 +1,4 @@
 <div class="skills">
-  <img class="icons" src="../../../../assets/img/html.webp" alt="html" title="HTML" draggable="false">
-  <img class="icons" src="../../../../assets/img/css.webp" alt="css" title="CSS" draggable="false">
-  <img class="icons" src="../../../../assets/img/js.webp" alt="js" title="JavaScript" draggable="false">
-  <img class="icons" src="../../../../assets/img/ts.webp" alt="ts" title="TypeScript" draggable="false">
-  <img class="icons" src="../../../../assets/img/boots.webp" alt="boots" title="Bootstrap" draggable="false">
-  <img class="icons" src="../../../../assets/img/angular.webp" alt="angular" title="Angular" draggable="false">
-  <img class="icons" src="../../../../assets/img/scss.webp" alt="scss" title="SCSS" draggable="false">
-  <img class="icons" src="../../../../assets/img/php.webp" alt="php" title="PHP" draggable="false">
-  <img class="icons" src="../../../../assets/img/jquery.webp" alt="jquery" title="Query" draggable="false">
-  <img class="icons" src="../../../../assets/img/node.webp" alt="node" title="NodeJs" draggable="false">
-  <img class="icons" src="../../../../assets/img/npm.webp" alt="npm" title="NPM" draggable="false">
-  <img class="icons" src="../../../../assets/img/react.webp" alt="react" title="React" draggable="false">
+  <img *ngFor="let skill of skills" class="icons" [src]="skill.img" [alt]="skill.alt" [title]="skill.title" draggable="false">
 </div>
 
