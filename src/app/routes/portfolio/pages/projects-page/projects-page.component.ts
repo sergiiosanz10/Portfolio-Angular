@@ -24,18 +24,6 @@ export class ProjectsPageComponent {
       route: 'auth'
     },
     {
-      name: 'Country App',
-      description: 'This is an app to search for capitals.',
-      img: '../../../../assets/img/country.webp',
-      route: 'countries'
-    },
-    {
-      name: 'TaskList',
-      description: 'This is an application to organize tasks.',
-      img: '../../../../assets/img/task.webp',
-      route: 'tasks'
-    },
-    {
       name: 'Flags',
       description: 'This is an application flags.',
       img: '../../../../assets/img/flags.webp',
@@ -46,6 +34,18 @@ export class ProjectsPageComponent {
       description: 'This is an application Maps.',
       img: '../../../../assets/img/maps.webp',
       route: 'maps'
+    },
+    {
+      name: 'Country App',
+      description: 'This is an app to search for capitals.',
+      img: '../../../../assets/img/country.webp',
+      route: 'countries'
+    },
+    {
+      name: 'TaskList',
+      description: 'This is an application to organize tasks.',
+      img: '../../../../assets/img/task.webp',
+      route: 'tasks'
     },
   ]
 
