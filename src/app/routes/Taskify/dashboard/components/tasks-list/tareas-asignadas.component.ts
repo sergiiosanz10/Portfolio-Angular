@@ -50,7 +50,10 @@ export class TareasAsignadasComponent implements OnInit {
         this.tasksList.set(tasks)
         this.groupTasksByDate();
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
-        this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
+        this.uniqueLabels.set([...new Set(this.tasksList().filter((task) => {
+          if(task.label==="") return false
+          return true
+        }).map(task => task.label))]);
         this.isLoading.set(false);
       });
   }
@@ -153,5 +156,4 @@ export class TareasAsignadasComponent implements OnInit {
     this.tasksList.set(data);
     this.ngOnInit()
   }
-
 }
