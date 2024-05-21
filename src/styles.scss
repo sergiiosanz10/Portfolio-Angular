@@ -1,6 +1,14 @@
 @use "@angular/material" as mat;
-@include mat.core();
+
+//FONTS
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+//###########################
+
+//TEMA PERSONALIZADO DE MATERIAL
+@include mat.core();
 $black: (
   50: #e0e0e0,
   100: #b3b3b3,
@@ -51,9 +59,7 @@ $Portfolio-theme: mat.define-light-theme(
 );
 
 @include mat.all-component-themes($Portfolio-theme);
-
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+//###############################
 
 * {
   margin: 0;
