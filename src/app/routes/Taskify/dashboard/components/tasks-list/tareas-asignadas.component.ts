@@ -49,11 +49,9 @@ export class TareasAsignadasComponent implements OnInit {
       .subscribe(tasks => {
         this.tasksList.set(tasks)
         this.groupTasksByDate();
+        this.setUniqueLabels();
+        
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
-        this.uniqueLabels.set([...new Set(this.tasksList().filter((task) => {
-          if(task.label==="") return false
-          return true
-        }).map(task => task.label))]);
         this.isLoading.set(false);
       });
   }
@@ -117,9 +115,9 @@ export class TareasAsignadasComponent implements OnInit {
       .subscribe(() => {
         this.tasksList.set(this.tasksList().filter(task => task.taskId !== id))
         this.groupTasksByDate();
+        this.setUniqueLabels();
 
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
-        this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         this.isLoading.set(false);
       });
   }
@@ -136,9 +134,9 @@ export class TareasAsignadasComponent implements OnInit {
         if (index !== -1) {
           this.tasksList()[index] = updatedTask;
           this.groupTasksByDate();
+          this.setUniqueLabels();
 
           this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
-          this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         }
       });
   }
@@ -155,5 +153,12 @@ export class TareasAsignadasComponent implements OnInit {
   actualizarDato(data: TaskResponse[]): void {
     this.tasksList.set(data);
     this.ngOnInit()
+  }
+
+  setUniqueLabels() {
+    this.uniqueLabels.set([...new Set(this.tasksList().filter((task) => {
+      if(task.label==="") return false
+      return true
+    }).map(task => task.label))]);
   }
 }
