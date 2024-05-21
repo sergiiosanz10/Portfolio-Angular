@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { AuthService } from '../../../../shared/services/auth.service';
-import { DashboardService } from '../../../../shared/services/dashboard.service';
-import { DtoResponseGetUser } from '../../../../shared/interfaces/DtoResponseGetUser';
+import { AuthService } from '../../../../../shared/services/auth.service';
+import { DashboardService } from '../../../../../shared/services/dashboard.service';
+import { DtoResponseGetUser } from '../../../../../shared/interfaces/DtoResponseGetUser';
+
 
 
 @Component({

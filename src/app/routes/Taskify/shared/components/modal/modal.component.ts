@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DashboardService } from '../../../../shared/services/dashboard.service';
-import { TaskResponse } from '../../../../shared/interfaces/taskify.interface';
+import { DashboardService } from '../../../../../shared/services/dashboard.service';
+import { TaskResponse } from '../../../../../shared/interfaces/taskify.interface';
 
 @Component({
   selector: 'shared-modal',
@@ -67,7 +67,7 @@ export class ModalComponent {
 
   groupTasksByDate() {
     //Limpio el Map
-    this.groupedTasks.set(new Map());
+    this.groupedTasks()?.clear();
 
     //Limpio la lista de fechas
     this.listDate.set([])
@@ -75,14 +75,14 @@ export class ModalComponent {
     this.tasksList().forEach(task => {
       const date = task.date || '';
       if (!this.groupedTasks()?.has(date)) {
-        var list = this.getTaskListInTheDay(date)
+        var list = this.getTasksByType(date)
         this.listDate().push(date)
         this.groupedTasks()?.set(date, list);
       }
     })
   }
 
-  getTaskListInTheDay(date: string) {
+  getTasksByType(date: string) {
 
     var list = this.tasksList().filter(task => {
 
@@ -99,6 +99,7 @@ export class ModalComponent {
     if (this.filterParam() != "") {
       list = list.filter(task => task.label === this.filterParam())
     }
+
     return list
   }
 

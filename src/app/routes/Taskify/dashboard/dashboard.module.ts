@@ -8,11 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { GestionComponent } from './components/gestion/gestion.component';
 import { RouterModule } from '@angular/router';
-import { ModalComponent } from '../components/modal/modal.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
-import { AlertComponent } from '../components/alert/alert.component';
-import { SideNavComponent } from '../components/side-nav/side-nav.component';
 import { SharedModule } from '../../../shared/shared.module';
+import { SideNavComponent } from '../shared/components/side-nav/side-nav.component';
+import { AlertComponent } from '../shared/components/alert/alert.component';
+import { ModalComponent } from '../shared/components/modal/modal.component';
 
 
 

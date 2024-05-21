@@ -36,6 +36,7 @@ export class TareasAsignadasComponent implements OnInit {
       this.listDate.set([]);
       this.isLoading.set(true);
     });
+
   }
 
   //CARGO LAS TAREAS
@@ -47,6 +48,8 @@ export class TareasAsignadasComponent implements OnInit {
     this.DashboardService.getTasks(token)
       .subscribe(tasks => {
         this.tasksList.set(tasks)
+        console.log(this.tasksList());
+
         this.groupTasksByDate();
 
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
@@ -60,6 +63,7 @@ export class TareasAsignadasComponent implements OnInit {
     //Limpio el Map
     this.groupedTasks.set(new Map());
 
+
     //Limpio la lista de fechas
     this.listDate.set([]);
 
@@ -68,24 +72,34 @@ export class TareasAsignadasComponent implements OnInit {
 
     sortedTasks.forEach(task => {
       const date = task.date || '';
-      var list = this.getTaskListInTheDay(date);
-      if (list.length > 0) {
-        this.listDate().push(date);
-        this.groupedTasks()?.set(date, list);
+      var list = this.getTasksByType(date);
+      if (list.length > 0 ) {
+        if(this.listDate().includes(task.date)==true){
+          this.groupedTasks()?.set(date, list);
+        }else{
+          this.listDate().push(date);
+          this.groupedTasks()?.set(date, list);
+        }
       }
     })
   }
 
   //FILTRO LAS TAREAS POR FECHA Y TIPO
-  getTaskListInTheDay(date: string) {
+  getTasksByType(date: string) {
 
     let list = this.tasksList().filter(task => {
 
-      if ((this.type() === "all" || this.type == undefined) && task.date === date) {
+      if (this.type() === "all" && task.date === date ) {
+        console.log('All');
+
         return true;
       } else if (this.type() === "pending" && task.date === date && task.status === false) {
+        console.log('Pending');
+
         return true;
       } else if (this.type() === "complete" && task.date === date && task.status === true) {
+        console.log('Pending');
+
         return true;
       }
       return false;
