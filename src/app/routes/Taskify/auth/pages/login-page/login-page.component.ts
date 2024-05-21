@@ -9,7 +9,7 @@ import { AuthStatus } from '../../../../../shared/interfaces';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.css'
+  styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
 

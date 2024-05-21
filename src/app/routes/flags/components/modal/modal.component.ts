@@ -13,7 +13,7 @@ export class ModalComponent {
   public flagSelected?: Flags;
 
 
-
+  //CONSIGO LA MONEDA DEL PAÍS SELECCIONADO
   getCurrency() {
     if (this.flagSelected == undefined) {
       return;
@@ -25,6 +25,7 @@ export class ModalComponent {
     }
   }
 
+  //CONSIGO EL LENGUAJE DEL PAÍS SELECCIONADO
   getLanguage() {
     if (this.flagSelected == undefined) {
       return;

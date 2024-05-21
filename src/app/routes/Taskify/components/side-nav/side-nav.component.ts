@@ -7,7 +7,7 @@ import { DtoResponseGetUser } from '../../../../shared/interfaces/DtoResponseGet
 @Component({
   selector: 'side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrl: './side-nav.component.css'
+  styleUrl: './side-nav.component.scss'
 })
 export class SideNavComponent implements OnInit {
 

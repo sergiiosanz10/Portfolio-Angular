@@ -13,7 +13,7 @@ import esLocale from '@fullcalendar/core/locales/es';
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
-  styleUrls: ['./calendario.component.css']
+  styleUrl: './calendario.component.scss'
 })
 export class CalendarioComponent implements OnInit {
   @ViewChild('eventTemplate') eventTemplate?: TemplateRef<any>;

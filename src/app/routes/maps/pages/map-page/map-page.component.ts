@@ -52,6 +52,7 @@ export class MapPageComponent {
     });
   }
 
+  //CONSEGUIR COMUNIDADES AUTÓNOMAS
   getComunidades() {
     this.mapsService.getComunidades()
       .subscribe(data => {
@@ -59,6 +60,7 @@ export class MapPageComponent {
       });
   }
 
+  //CONSEGUIR PROVINCIAS
   getProvinces() {
     this.myForm.get('comunidad')!.valueChanges
       .pipe(
@@ -71,6 +73,7 @@ export class MapPageComponent {
       });
   }
 
+  //CONSEGUIR MUNICIPIOS
   getMunicipios() {
     this.myForm.get('provincia')!.valueChanges
       .pipe(
@@ -89,6 +92,7 @@ export class MapPageComponent {
       });
   }
 
+  //VOLAR AL MUNICIPIO SELECCIONADO
   flyTo(municipio: string) {
     this.selectedMunicipio = this.municipios?.results.find(m => m.mun_name === municipio);
 
@@ -110,14 +114,16 @@ export class MapPageComponent {
     }
   }
 
+  //REDIRECCION AL TIEMPO DEL MUNICIPIO SELECCIONADO
   municipioWeather() {
     //Div y boton para redirigir a weather
     this.marker?.getElement().addEventListener("click", () => {
-      console.log("HILI");
-    })
+    });
+
     let popup = new Popup()
     let div = document.createElement("div");
     let bnt = document.createElement("a");
+
     div.classList.add('div_btn');
     bnt.innerText = "Tiempo";
     bnt.classList.add("btn_weather");
@@ -129,6 +135,7 @@ export class MapPageComponent {
     this.marker?.setPopup(popup);
   }
 
+  //CREAR EL MARCADOR
   createMarker() {
     if (!this.map) return;
 
@@ -138,6 +145,7 @@ export class MapPageComponent {
     this.addMarker(lngLat, color);
   }
 
+  //AÑADIR EL MARCADOR
   addMarker(lngLat: LngLat, color: string) {
 
     if (!this.map) return;
@@ -153,6 +161,7 @@ export class MapPageComponent {
 
   }
 
+  //CONSEGUIR EL NOMBRE DEL MUNICIPIO MAS CERCANO SEGUN LAS CORDENADAS GRACIAS A LA API DEL TIEMPO
   weatherMarker(lngLat: LngLat) {
     this.myForm.get('comunidad')?.setValue(''),
     this.myForm.get('provincia')?.setValue(''),
@@ -167,8 +176,8 @@ export class MapPageComponent {
             this.myForm.get('comunidad')?.setValue(data.results[0].acom_name),
             this.myForm.get('provincia')!.setValue(data.results[0].prov_name)
             this.myForm.get('municipio')!.setValue(data.results[0].mun_name),
-            this.selectedMunicipio = data.results[0]
-            this.municipioWeather()
+            this.selectedMunicipio = data.results[0];
+            this.municipioWeather();
           }
           )
       });

@@ -8,7 +8,7 @@ import { AuthService } from '../../../../../shared/services/auth.service';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
-  styleUrl: './register-page.component.css'
+  styleUrl: './register-page.component.scss'
 })
 export class RegisterPageComponent {
   private fb          = inject(FormBuilder);

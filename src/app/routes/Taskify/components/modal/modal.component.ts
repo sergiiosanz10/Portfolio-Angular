@@ -6,7 +6,6 @@ import { TaskResponse } from '../../../../shared/interfaces/taskify.interface';
 @Component({
   selector: 'shared-modal',
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
 })
 export class ModalComponent {
 

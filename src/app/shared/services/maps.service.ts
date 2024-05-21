@@ -20,22 +20,27 @@ export class MapsService {
   private weatherMunicipiosUrl = 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-spain-municipio/records?select=geo_point_2d,mun_name,acom_name,prov_name&where=mun_name=%27'
   private weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?'
 
+  //LLAMADA A LA API PARA TRAER LAS COMUNIDADES
   getComunidades(): Observable<Province> {
     return this.http.get<Province>(`${this.ComuidadAutonomaUrl}`)
   }
 
+  //LLAMADA A LA API PARA TRAER LAS PROVINCIAS
   getProvinces(comunidad: Province | undefined): Observable<Province> {
     return this.http.get<Province>(`${this.provincesUrl}${comunidad}`)
   }
 
+  //LLAMADA A LA API PARA TRAER LOS MUNICIPIOS
   getMunicipios(municipio: Province | undefined): Observable<Province> {
     return this.http.get<Province>(`${this.municipiosUrl}${municipio}`)
   }
 
+  //LLAMADA A LA API PARA CONSEGUIR EL TIEMPO DEL MUNICIPIO
   getWeatherMunicipio(municipio: string): Observable<Province> {
     return this.http.get<Province>(`${this.weatherMunicipiosUrl}${municipio}%27&limit=100`)
   }
 
+  //LLAMADA A LA API PARA OBTENER EL NOMBRE DEL MUNICIPIO POR COORDENADAS
   getweather(lat: number, long: number): Observable<Weather> {
     console.log(lat, long);
     return this.http.get<Weather>(`${this.weatherUrl}lat=${lat}&lon=${long}${this.weatherapiKey}&units=metric`);

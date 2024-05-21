@@ -7,7 +7,7 @@ import { TaskResponse } from '../../../../../shared/interfaces/taskify.interface
 @Component({
   selector: 'app-tareas-asignadas',
   templateUrl: './tareas-asignadas.component.html',
-  styleUrl: './tareas-asignadas.component.css'
+  styleUrl: './tareas-asignadas.component.scss'
 })
 export class TareasAsignadasComponent implements OnInit {
 
@@ -38,6 +38,7 @@ export class TareasAsignadasComponent implements OnInit {
     });
   }
 
+  //CARGO LAS TAREAS
   loadTasks() {
     const token = sessionStorage.getItem('token');
     if (!token) return;
@@ -47,21 +48,25 @@ export class TareasAsignadasComponent implements OnInit {
       .subscribe(tasks => {
         this.tasksList.set(tasks)
         this.groupTasksByDate();
-        this.sortTasks();
+
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         this.isLoading.set(false);
       });
   }
 
+  //AGRUPO LAS TAREAS POR FECHA
   groupTasksByDate() {
     //Limpio el Map
     this.groupedTasks.set(new Map());
 
     //Limpio la lista de fechas
-    this.listDate.set([])
+    this.listDate.set([]);
 
-    this.tasksList().forEach(task => {
+    // Ordeno las tareas por fecha
+    const sortedTasks = this.tasksList().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+    sortedTasks.forEach(task => {
       const date = task.date || '';
       var list = this.getTaskListInTheDay(date);
       if (list.length > 0) {
@@ -71,6 +76,7 @@ export class TareasAsignadasComponent implements OnInit {
     })
   }
 
+  //FILTRO LAS TAREAS POR FECHA Y TIPO
   getTaskListInTheDay(date: string) {
 
     let list = this.tasksList().filter(task => {
@@ -92,6 +98,7 @@ export class TareasAsignadasComponent implements OnInit {
   }
 
 
+  //ELIMINAR UNA TAREA
   deleteTask(id: string) {
     this.isLoading.set(true);
     const token = sessionStorage.getItem('token');
@@ -101,13 +108,14 @@ export class TareasAsignadasComponent implements OnInit {
       .subscribe(() => {
         this.tasksList.set(this.tasksList().filter(task => task.taskId !== id))
         this.groupTasksByDate();
-        this.sortTasks();
+
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         this.isLoading.set(false);
       });
   }
 
+  //MODIFICAR UNA TAREA
   modifyTask(task: TaskResponse) {
     const token = sessionStorage.getItem('token');
 
@@ -119,18 +127,14 @@ export class TareasAsignadasComponent implements OnInit {
         if (index !== -1) {
           this.tasksList()[index] = updatedTask;
           this.groupTasksByDate();
-          this.sortTasks();
+
           this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
           this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         }
       });
   }
 
-
-  sortTasks() {
-    this.tasksList().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  }
-
+  //FILTRAR POR ETIQUETA
   filterByLabel(label: string) {
     this.isLoading.set(true);
     this.filterParam.set(label)
@@ -138,6 +142,7 @@ export class TareasAsignadasComponent implements OnInit {
     this.loadTasks();
   }
 
+  //RECOGER LA NUEVA TAREA CREADA Y ACTUALIZAR LA LISTA
   actualizarDato(data: TaskResponse[]): void {
     this.tasksList.set(data);
     this.ngOnInit()

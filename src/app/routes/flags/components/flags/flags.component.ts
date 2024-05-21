@@ -26,15 +26,15 @@ export class FlagsComponent {
     this.flags();
   }
 
+  //CONSIGO TODAS LAS BANDERAS
   flags(): void {
     this.flagsService.getFlags()
       .subscribe(flags => {
         this.flagsList = flags;
       });
-
   }
 
-
+  //GUARDO LA BANDERA SELECCIONADA
   setflagSelected(i: number): void {
     this.flagSelected = this.flagsList[i];
   }

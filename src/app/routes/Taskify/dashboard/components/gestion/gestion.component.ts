@@ -5,7 +5,7 @@ import { DashboardService } from '../../../../../shared/services/dashboard.servi
 @Component({
   selector: 'app-gestion',
   templateUrl: './gestion.component.html',
-  styleUrl: './gestion.component.css'
+  styleUrl: './gestion.component.scss'
 })
 export class GestionComponent {
 
