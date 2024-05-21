@@ -14,9 +14,9 @@
         </button>
         <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
           <li *ngIf="!uniqueLabels().includes('')">
-            <a class="dropdown-item p-0" *ngFor="let label of uniqueLabels()" (click)="filterByLabel(label)">{{label}}</a>
+            <a class="dropdown-item p-0 mb-1 p-1 filter-label rounded" *ngFor="let label of uniqueLabels()" (click)="filterByLabel(label)">{{label}}</a>
           </li>
-          <li *ngIf="uniqueLabels().includes('')">
+          <li *ngIf="uniqueLabels().includes('') || uniqueLabels().length === 0">
             <span class="dropdown-item">No hay etiquetas</span>
           </li>
         </ul>
