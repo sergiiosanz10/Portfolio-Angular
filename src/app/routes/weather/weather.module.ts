@@ -18,6 +18,7 @@ import { GraphicPageComponent } from './components/graphic-page/graphic-page.com
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { SharedModule } from '../../shared/shared.module';
 
 registerLocaleData(es);
 
@@ -39,7 +40,8 @@ registerLocaleData(es);
     MaterialModule,
     ReactiveFormsModule,
     NgxChartsModule,
-    WeatherRoutingModule
+    WeatherRoutingModule,
+    SharedModule
   ],
   exports: [
     MainPageComponent
