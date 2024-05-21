@@ -4,6 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { WeatherService } from '../../../../shared/services/weather.service';
 import { Weather } from '../../../../shared/interfaces/weather.interface';
 import { ForeCast, List } from '../../../../shared/interfaces/forecast.interface';
+import { BehaviorSubject } from 'rxjs';
+
+
+type status = 'denied' | 'granted' | 'prompt';
 
 
 @Component({
@@ -18,6 +22,9 @@ export class WeatherPageComponent implements OnInit {
   public capital: string = '';
 
   public isLoading = signal<boolean>(true)
+
+  //OBSERVADO
+  public statusPermision: BehaviorSubject<status> = new BehaviorSubject<status>('prompt')
 
   constructor(
     private weatherService: WeatherService,
@@ -38,8 +45,19 @@ export class WeatherPageComponent implements OnInit {
   }
 
 
-
   ngOnInit(): void {
+
+    //COMPRUEBO EL ESTADO DEL PERMISO DE LA GEOLOCALIZACIÓN
+    this.statusPermision.subscribe((e) => {
+      if (e === 'denied') {
+        this.isLoading.set(false);
+      }
+      if (e === 'granted') {
+        this.shearchGeolocation();
+      }
+    })
+
+    this.addEventChangeToNavegator();
 
     this.activatedRoute.params
       .subscribe(params => {
@@ -51,22 +69,40 @@ export class WeatherPageComponent implements OnInit {
       return
     } else {
       this.isLoading.set(true);
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          this.weatherService.getweatherGeo(latitude, longitude)
-            .subscribe(data => {
-              this.weathers = data;
-              this.weatherService.conseguirDatos(data);
-              this.isLoading.set(false);
-            });
-        });
-      } else {
-        console.log("Geolocation is not supported by this browser.");
-      }
-    }
 
+      this.shearchGeolocation()
+    }
+  }
+
+  addEventChangeToNavegator() {
+    navigator.permissions.query({
+      name: "geolocation"
+    }).then((e) => {
+      this.statusPermision.next(e.state)
+      e.addEventListener('change', () => {
+        this.statusPermision.next(e.state)
+      })
+    })
+  }
+
+  //BUSCAR TIEMPO POR GEOLOCALIZACIÓN
+  shearchGeolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        this.weatherService.getweatherGeo(latitude, longitude)
+          .subscribe(data => {
+            this.weathers = data;
+            this.weatherService.conseguirDatos(data);
+            this.isLoading.set(false);
+          });
+      });
+
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
   }
 
   //Fondo segun el tiempo
@@ -100,5 +136,7 @@ export class WeatherPageComponent implements OnInit {
 
 
   }
-
 }
+
+
+

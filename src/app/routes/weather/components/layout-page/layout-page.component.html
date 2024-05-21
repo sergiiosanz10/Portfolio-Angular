@@ -2,9 +2,9 @@
 
   <mat-toolbar>
     <mat-icon class="logo mx-3">cloud</mat-icon>
-    <span class=" ">Tiempo en {{weather?.name}} | {{weather?.sys?.country}}</span>
+    <span *ngIf="weather?.name">Tiempo en {{weather?.name}} | {{weather?.sys?.country}}</span>
+    <span *ngIf="!weather">Busca una ciudad</span>
   </mat-toolbar>
-
 </mat-sidenav-container>
 
 
