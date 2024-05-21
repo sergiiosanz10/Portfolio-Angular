@@ -1,19 +1,36 @@
-# Portfolio
+
+# Portfolio Sergio Sanz García
+
+This is my personal portfolio developed with Angular. Here you can find information about me, my projects, and how to contact me.
 
 
-## Development
+## Description
 
-1.  ``` npm install                                                    ```
-2.  ``` ng add @angular/material                                       ```
-3.  ``` npm i @swimlane/ngx-charts                                     ```
-4.  ``` npm install --save-dev @types/uuid                             ```
-5.  ``` npm install --save @emailjs/browser                            ```
-6.  ``` npm install @fortawesome/angular-fontawesome                   ```
-7.  ``` npm install @fortawesome/free-solid-svg-icons                  ```
-8.  ``` npm install --save mapbox-gl                                   ```
-9.  ``` npm i --save-dev @types/mapbox-gl                              ```
-10. ``` npm install --save @fullcalendar/angular @fullcalendar/daygrid ```
-11. ``` npm install @fullcalendar/interaction                          ```
-12. ``` npm install sweetalert2                                        ```
+This portfolio contains the following sections:
 
+- **Home:** Main page with an introduction.
+- **About Me:** Information about my experience, skills, and education.
+- **Projects:** Showcase of my most notable projects with descriptions and links.
+- **Contact:** Contact form for getting in touch with me.
 
+## Requirements
+
+To run this project, you need to have the following installed on your machine:
+
+- **Node.js** (version 18 or higher)
+- **Angular CLI** (version 17)
+
+Follow these steps to set up the project locally:
+
+1. Clone this repository:
+
+   ```bash
+   git clone git clone https://github.com/sergiiosanz10/Portfolio-Angular
+2. Install the dependencies:
+
+   ```bash
+   npm install
+3. Usage
+
+    ```bash
+    ng serve
