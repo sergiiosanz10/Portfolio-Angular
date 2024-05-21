@@ -48,10 +48,7 @@ export class TareasAsignadasComponent implements OnInit {
     this.DashboardService.getTasks(token)
       .subscribe(tasks => {
         this.tasksList.set(tasks)
-        console.log(this.tasksList());
-
         this.groupTasksByDate();
-
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.uniqueLabels.set([...new Set(this.tasksList().map(task => task.label))]);
         this.isLoading.set(false);
@@ -72,9 +69,10 @@ export class TareasAsignadasComponent implements OnInit {
 
     sortedTasks.forEach(task => {
       const date = task.date || '';
-      var list = this.getTasksByType(date);
+      var list = this.filterTasksByType(date);
       if (list.length > 0 ) {
-        if(this.listDate().includes(task.date)==true){
+        //SI INCLUYE YA LA FECHA SET A LAS TAREAS AGRUPADAS POR FECHA Y SI NO LO PUSHEO TAMBIEN A LA LISTA DE FECHAS
+        if(this.listDate().includes(task.date)){
           this.groupedTasks()?.set(date, list);
         }else{
           this.listDate().push(date);
@@ -85,21 +83,15 @@ export class TareasAsignadasComponent implements OnInit {
   }
 
   //FILTRO LAS TAREAS POR FECHA Y TIPO
-  getTasksByType(date: string) {
+  filterTasksByType(date: string) {
 
     let list = this.tasksList().filter(task => {
 
       if (this.type() === "all" && task.date === date ) {
-        console.log('All');
-
         return true;
       } else if (this.type() === "pending" && task.date === date && task.status === false) {
-        console.log('Pending');
-
         return true;
       } else if (this.type() === "complete" && task.date === date && task.status === true) {
-        console.log('Pending');
-
         return true;
       }
       return false;
