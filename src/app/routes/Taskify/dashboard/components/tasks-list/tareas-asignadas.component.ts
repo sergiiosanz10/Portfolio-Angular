@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import { ActivatedRoute, Router } from '@angular/router';
 import { DashboardService } from '../../../../../shared/services/dashboard.service';
 import { TaskResponse } from '../../../../../shared/interfaces/taskify.interface';
 
@@ -13,16 +13,16 @@ export class TareasAsignadasComponent implements OnInit {
 
 
   private DashboardService = inject(DashboardService);
-  private activatedRoute = inject(ActivatedRoute);
+  private activatedRoute   = inject(ActivatedRoute);
 
+  public tasksList    = signal<TaskResponse[]>([]);
   public groupedTasks = signal<Map<string, TaskResponse[]> | undefined>(undefined);
-  public tasksList = signal<TaskResponse[]>([]);
+  public listDate     = signal<string[]>([]);
+  public type         = signal<string>('');
+  public filterParam  = signal<string>('');
   public uniqueColors = signal<string[]>([]);
   public uniqueLabels = signal<string[]>([]);
-  public filterParam = signal<string>('');
-  public type = signal<string>('');
-  public listDate = signal<string[]>([]);
-  public isLoading = signal<boolean>(false);
+  public isLoading    = signal<boolean>(false);
 
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class TareasAsignadasComponent implements OnInit {
         this.tasksList.set(tasks)
         this.groupTasksByDate();
         this.setUniqueLabels();
-        
+
         this.uniqueColors.set([...new Set(this.tasksList().map(task => task.color))]);
         this.isLoading.set(false);
       });
@@ -60,7 +60,6 @@ export class TareasAsignadasComponent implements OnInit {
   groupTasksByDate() {
     //Limpio el Map
     this.groupedTasks.set(new Map());
-
 
     //Limpio la lista de fechas
     this.listDate.set([]);
@@ -72,7 +71,7 @@ export class TareasAsignadasComponent implements OnInit {
       const date = task.date || '';
       var list = this.filterTasksByType(date);
       if (list.length > 0 ) {
-        //SI INCLUYE YA LA FECHA SET A LAS TAREAS AGRUPADAS POR FECHA Y SI NO LO PUSHEO TAMBIEN A LA LISTA DE FECHAS
+        //SI INCLUYE YA LA FECHA SETEO LA TAREA A LAS TAREAS AGRUPADAS POR FECHA Y SI NO LO PUSHEO TAMBIEN A LA LISTA DE FECHAS
         if(this.listDate().includes(task.date)){
           this.groupedTasks()?.set(date, list);
         }else{
@@ -152,7 +151,7 @@ export class TareasAsignadasComponent implements OnInit {
   //RECOGER LA NUEVA TAREA CREADA Y ACTUALIZAR LA LISTA
   actualizarDato(data: TaskResponse[]): void {
     this.tasksList.set(data);
-    this.ngOnInit()
+    this.loadTasks();
   }
 
   setUniqueLabels() {
