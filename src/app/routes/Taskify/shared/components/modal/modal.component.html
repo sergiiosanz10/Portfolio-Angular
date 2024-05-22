@@ -8,9 +8,9 @@
             <span class="label-input100">Etiqueta</span>
             <input type="text" class="form-control w-100 mb-4" placeholder="Etiqueta" formControlName="label" list="datalistOptions" id="labelsDataList">
             <datalist id="datalistOptions">
-              <option  *ngFor="let task of tasksList()" [value]="task.label">
+              <option  *ngFor="let label of uniqueLabels()" [value]="label">
             </datalist>
-            
+
             <span class="label-input100">Nombre</span>
             <span *ngIf="isValidField('name')" class="form-text text-danger">
               Este campo es obligatorio

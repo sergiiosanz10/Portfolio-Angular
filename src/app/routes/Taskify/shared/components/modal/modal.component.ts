@@ -12,6 +12,8 @@ export class ModalComponent {
   private fb = inject(FormBuilder);
   private DashboardService = inject(DashboardService);
 
+  @Input()
+  public uniqueLabels = signal<string[]>([]);
 
   @Output()
   public datoActualizado = new EventEmitter<TaskResponse[]>()
@@ -55,4 +57,5 @@ export class ModalComponent {
   isValidField(field: string) {
     return this.DashboardService.isValidField(this.myForm, field)
   }
+
 }
