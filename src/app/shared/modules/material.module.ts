@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {FormsModule} from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
@@ -24,7 +25,8 @@ import {FormsModule} from '@angular/forms';
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }

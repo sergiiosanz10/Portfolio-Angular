@@ -9,6 +9,7 @@ import { SergioSanzComponent } from './components/sergio-sanz/sergio-sanz.compon
 import { SkillsIconsComponent } from './components/skills-icons/skills-icons.component';
 import { HeaderImageComponent } from './components/header-image/header-image.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { MaterialModule } from './modules/material.module';
 
 
 
@@ -24,7 +25,8 @@ import { AlertComponent } from './components/alert/alert.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   exports: [
     NavbarComponent,
