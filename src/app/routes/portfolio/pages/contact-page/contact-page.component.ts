@@ -3,7 +3,7 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { CustomCursorComponent } from '../../../../shared/components/custom-cursor/cursor-component';
-import { environment } from '../../../../../environments/environment.development';
+import { environment_dev } from '../../../../../environments/environment.development';
 
 
 @Component({
@@ -52,7 +52,7 @@ this.isLoading = true;
 
       emailjs
         .sendForm('service_bbu0o6g', 'template_bf3ksfr', e.target as HTMLFormElement, {
-          publicKey: environment.apiKey,
+          publicKey: environment_dev.apiKey,
         })
         .then(
           () => {

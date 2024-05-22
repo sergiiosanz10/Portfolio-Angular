@@ -22,7 +22,7 @@ export class TareasAsignadasComponent implements OnInit {
   public filterParam  = signal<string>('');
   public uniqueColors = signal<string[]>([]);
   public uniqueLabels = signal<string[]>([]);
-  public isLoading    = signal<boolean>(false);
+  public isLoading    = signal<boolean>(true);
 
 
   ngOnInit() {

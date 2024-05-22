@@ -1,5 +1,5 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
-import { environment } from '../../../environments/Taskify-environment';
+import { environment_Taskify } from '../../../environments/Taskify-environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map, of, throwError } from 'rxjs';
 import { User, AuthStatus, LoginResponse, CheckTokenResponse, RegisterResponse } from '../interfaces';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private readonly baseUrl: string = environment.baseUrl;
+  private readonly baseUrl: string = environment_Taskify.baseUrl;
   private http = inject(HttpClient);
   private router = inject(Router);
 
@@ -84,17 +84,8 @@ export class AuthService {
 
   checkAuthStatus(): Observable<boolean> {
     const url = `${this.baseUrl}/auth/check-token`;
-    const token = sessionStorage.getItem('token')
 
-    if (!token) {
-      this.logout()
-      return of(false)
-    }
-
-    const headers = new HttpHeaders()
-      .set('Authorization', `Bearer ${token}`)
-
-    return this.http.get<CheckTokenResponse>(url, { headers })
+    return this.http.get<CheckTokenResponse>(url)
       .pipe(
         map(({ user, token }) => this.setAuthenticated(user, token)),
         catchError(() => {
