@@ -8,6 +8,7 @@ import { CustomCursorComponent } from './components/custom-cursor/cursor-compone
 import { SergioSanzComponent } from './components/sergio-sanz/sergio-sanz.component';
 import { SkillsIconsComponent } from './components/skills-icons/skills-icons.component';
 import { HeaderImageComponent } from './components/header-image/header-image.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 
 
@@ -19,6 +20,7 @@ import { HeaderImageComponent } from './components/header-image/header-image.com
     SergioSanzComponent,
     SkillsIconsComponent,
     HeaderImageComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { HeaderImageComponent } from './components/header-image/header-image.com
     CustomCursorComponent,
     SergioSanzComponent,
     SkillsIconsComponent,
-    HeaderImageComponent
+    HeaderImageComponent,
+    AlertComponent
   ]
 })
 export class SharedModule { }

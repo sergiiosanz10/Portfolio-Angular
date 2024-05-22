@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { SideNavComponent } from '../shared/components/side-nav/side-nav.component';
-import { AlertComponent } from '../../../shared/components/alert/alert.component';
 import { ModalComponent } from '../shared/components/modal/modal.component';
 
 
@@ -23,7 +22,6 @@ import { ModalComponent } from '../shared/components/modal/modal.component';
     CalendarioComponent,
     GestionComponent,
     ModalComponent,
-    AlertComponent,
     SideNavComponent
   ],
   imports: [

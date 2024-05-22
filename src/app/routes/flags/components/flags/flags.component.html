@@ -1,4 +1,6 @@
-<div class="row">
+<shared-alert *ngIf="!flagsList" [message]="'Error al cargar las banderas!!'" [alertType]="'alert-danger'"></shared-alert>
+
+<div class="row" *ngIf="flagsList">
   <div class="col-12 mt-3 d-flex flex-wrap justify-content-center">
     <mat-card class="m-5 card" *ngFor="let flag of flagsList; let i = index" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setflagSelected(i)">
             <!-- @defer para cargar las banderas que se ven en la pantalla en vez de cargar todas  -->
@@ -10,9 +12,9 @@
                 <shared-loadging-spiner></shared-loadging-spiner>
               </div>
             }
-
     </mat-card>
   </div>
 </div>
 
 <flag-modal  [flagSelected]="flagSelected"></flag-modal>
+
