@@ -47,18 +47,6 @@ export class WeatherPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //COMPRUEBO EL ESTADO DEL PERMISO DE LA GEOLOCALIZACIÓN
-    this.statusPermision.subscribe((e) => {
-      if (e === 'denied') {
-        this.isLoading.set(false);
-      }
-      if (e === 'granted') {
-        this.shearchGeolocation();
-      }
-    })
-
-    this.addEventChangeToNavegator();
-
     this.activatedRoute.params
       .subscribe(params => {
         this.capital = params['capital'];
@@ -72,6 +60,20 @@ export class WeatherPageComponent implements OnInit {
 
       this.shearchGeolocation()
     }
+
+    //COMPRUEBO EL ESTADO DEL PERMISO DE LA GEOLOCALIZACIÓN
+    this.statusPermision.subscribe((e) => {
+      if (e === 'denied') {
+        this.isLoading.set(false);
+      }
+      if (e === 'granted') {
+        this.shearchGeolocation();
+      }
+    })
+
+    this.addEventChangeToNavegator();
+
+
   }
 
   addEventChangeToNavegator() {
