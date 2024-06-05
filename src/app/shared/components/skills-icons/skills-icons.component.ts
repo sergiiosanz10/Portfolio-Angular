@@ -19,6 +19,21 @@ export class SkillsIconsComponent {
       img: '../../../../assets/img/css.webp'
     },
     {
+      title: 'SCSS',
+      alt: 'scss',
+      img: '../../../../assets/img/scss.webp'
+    },
+    {
+      title: 'Tailwind CSS',
+      alt: 'tailwind',
+      img: '../../../../assets/img/tailwind.webp'
+    },
+    {
+      title: 'Bootstrap',
+      alt: 'boots',
+      img: '../../../../assets/img/boots.webp'
+    },
+    {
       title: 'JavaScript',
       alt: 'js',
       img: '../../../../assets/img/js.webp'
@@ -27,21 +42,6 @@ export class SkillsIconsComponent {
       title: 'TypeScript',
       alt: 'ts',
       img: '../../../../assets/img/ts.webp'
-    },
-    {
-      title: 'Bootstrap',
-      alt: 'boots',
-      img: '../../../../assets/img/boots.webp'
-    },
-    {
-      title: 'Angular',
-      alt: 'angular',
-      img: '../../../../assets/img/angular.webp'
-    },
-    {
-      title: 'SCSS',
-      alt: 'scss',
-      img: '../../../../assets/img/scss.webp'
     },
     {
       title: 'PHP',
@@ -62,6 +62,26 @@ export class SkillsIconsComponent {
       title: 'NPM',
       alt: 'npm',
       img: '../../../../assets/img/npm.webp'
+    },
+    {
+      title: 'MongoDB',
+      alt: 'mongo',
+      img: '../../../../assets/img/mongo.webp'
+    },
+    {
+      title: 'MySQL',
+      alt: 'mysql',
+      img: '../../../../assets/img/mysql.webp'
+    },
+    {
+      title: 'NestJs',
+      alt: 'nest',
+      img: '../../../../assets/img/nestsJs.webp'
+    },
+    {
+      title: 'Angular',
+      alt: 'angular',
+      img: '../../../../assets/img/angular.webp'
     },
     {
       title: 'React',
